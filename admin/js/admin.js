@@ -50,7 +50,7 @@ function initAdminData() {
   } catch(e) {
     console.error(e);
   }
-  if (!appData || !appData.dishes) {
+  if (!appData || !appData.dishes || appData.version !== 3) {
     appData = DEFAULT_MIRAL_DATA;
     localStorage.setItem('miral_data', JSON.stringify(appData));
   }

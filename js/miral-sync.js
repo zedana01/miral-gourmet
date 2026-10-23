@@ -4,6 +4,7 @@
  */
 
 const DEFAULT_MIRAL_DATA = {
+  version: 3,
   settings: {
     restaurantName: "مطعم ميرال جورميه",
     restaurantSub: "MIRAL GOURMET • RIYADH",
@@ -101,7 +102,7 @@ const DEFAULT_MIRAL_DATA = {
       calories: 520,
       tags: ["طبق تقليدي مطور"],
       desc: "سمان مشوي ببطء محشو بالفريكة البلدية الفاخرة والصنوبر المقلي مع مرق الرمان المركز.",
-      image: "https://images.unsplash.com/photo-1544025162-d76694265947?auto=format&fit=crop&w=600&q=80",
+      image: "https://images.unsplash.com/photo-1598103442097-8b74394b95c6?auto=format&fit=crop&w=800&q=80",
       isSignature: false,
       badge: "مميز"
     },
@@ -113,7 +114,7 @@ const DEFAULT_MIRAL_DATA = {
       calories: 340,
       tags: ["خالٍ من الجلوتين"],
       desc: "مكعبات سلمون طازجة منقوعة في عصير الليمون والبرتقال مع الأفوكادو، رقائق الفجل، وزيت الشمر.",
-      image: "https://images.unsplash.com/photo-1519708227418-c8fd9a32b7a2?auto=format&fit=crop&w=600&q=80",
+      image: "https://images.unsplash.com/photo-1534422298391-e4f8c172dddb?auto=format&fit=crop&w=800&q=80",
       isSignature: false,
       badge: "طازج"
     },
@@ -125,7 +126,7 @@ const DEFAULT_MIRAL_DATA = {
       calories: 780,
       tags: ["الأكثر طلباً"],
       desc: "شريحة ريب آي رخامية مشوية بدرجة طلبك مع زبدة الأعشاب ومرق الفلفل الأخضر الحار وبطاطس ودجز مقرمشة.",
-      image: "https://images.unsplash.com/photo-1558030006-450675393462?auto=format&fit=crop&w=600&q=80",
+      image: "https://images.unsplash.com/photo-1546964124-0cce460f38ef?auto=format&fit=crop&w=800&q=80",
       isSignature: false,
       badge: "الأكثر طلباً"
     },
@@ -137,7 +138,7 @@ const DEFAULT_MIRAL_DATA = {
       calories: 590,
       tags: ["أصيل ومميز"],
       desc: "لحم عجل طري مطهو في فخار مغربي أصيل مع بهارات رأس الحانوت المعتقة والسمسم المحمص.",
-      image: "https://images.unsplash.com/photo-1544025162-d76694265947?auto=format&fit=crop&w=600&q=80",
+      image: "https://images.unsplash.com/photo-1541518763669-27fef04b14ea?auto=format&fit=crop&w=800&q=80",
       isSignature: false,
       badge: "مطهو بالفخار"
     },
@@ -149,7 +150,7 @@ const DEFAULT_MIRAL_DATA = {
       calories: 420,
       tags: ["توقيع ميرال"],
       desc: "حمص ناعم مخملي ممزوج بمعجون الكمأة الإيطالي ومغطى بشرائح لحم بقري متبلة وصنوبر بلدي.",
-      image: "https://images.unsplash.com/photo-1540420773420-3366772f4999?auto=format&fit=crop&w=600&q=80",
+      image: "https://images.unsplash.com/photo-1577906096429-f73c2c312435?auto=format&fit=crop&w=800&q=80",
       isSignature: false,
       badge: "مقبلات ساخنة"
     },
@@ -161,7 +162,7 @@ const DEFAULT_MIRAL_DATA = {
       calories: 610,
       tags: ["لحم بلدي طازج"],
       desc: "قطع لحم غنم نعيمي طازجة متبلة بالزعفران الإيراني الفاخر وبصل الكراميل المشوي على السيخ الخشبي.",
-      image: "https://images.unsplash.com/photo-1544025162-d76694265947?auto=format&fit=crop&w=600&q=80",
+      image: "https://images.unsplash.com/photo-1555939594-58d7cb561ad1?auto=format&fit=crop&w=800&q=80",
       isSignature: false,
       badge: "مشويات"
     },
@@ -173,7 +174,7 @@ const DEFAULT_MIRAL_DATA = {
       calories: 450,
       tags: ["حلى شرقي عصري"],
       desc: "قاعدة بسكويت الهيل المقرمشة مع طبقة جبن كريمي غني بنكهة تمر الخلاص القصيمي وآيس كريم الفانيليا.",
-      image: "https://images.unsplash.com/photo-1587314168485-3236d6710814?auto=format&fit=crop&w=600&q=80",
+      image: "https://images.unsplash.com/photo-1533134242443-d4fd215305ad?auto=format&fit=crop&w=800&q=80",
       isSignature: false,
       badge: "حلوى"
     },
@@ -263,7 +264,15 @@ function getMiralData() {
   try {
     const raw = localStorage.getItem('miral_data');
     if (raw) {
-      return JSON.parse(raw);
+      const parsed = JSON.parse(raw);
+      if (parsed.version === 3) {
+        return parsed;
+      }
+      // Migrate dishes to ensure high quality images
+      parsed.version = 3;
+      parsed.dishes = DEFAULT_MIRAL_DATA.dishes;
+      localStorage.setItem('miral_data', JSON.stringify(parsed));
+      return parsed;
     }
   } catch (e) {
     console.error("Error reading miral_data:", e);
@@ -370,15 +379,27 @@ function renderMenuGrid(dishes) {
   if (!menuGrid) return;
   let html = '';
   dishes.forEach(dish => {
+    const tagText = (dish.tags && dish.tags[0]) || dish.badge || 'أصيل';
     html += `
       <div class="menu-list-card" data-category="${dish.category}">
+        <div class="menu-list-thumb">
+          <img src="${dish.image}" alt="${dish.title}" loading="lazy">
+        </div>
         <div class="menu-list-content">
           <div class="menu-list-header">
             <h4 class="menu-list-title">${dish.title}</h4>
             <span class="menu-list-price">${dish.price} ر.س</span>
           </div>
           <p class="menu-list-desc">${dish.desc}</p>
-          <span class="menu-list-tag">${(dish.tags && dish.tags[0]) || dish.badge || 'أصيل'}</span>
+          <div class="menu-list-meta">
+            <div style="display:flex; align-items:center; gap:8px;">
+              <span class="menu-list-tag">${tagText}</span>
+              <span class="menu-list-cal"><i class="fa-solid fa-fire"></i> ${dish.calories || 0} سعرة</span>
+            </div>
+            <button class="btn btn-outline btn-sm quick-add-btn" onclick="quickAddToBooking('${dish.title.replace(/'/g, "\'")}')" style="padding:4px 12px; font-size:12px;">
+              <i class="fa-solid fa-plus"></i> إضافة للحجز
+            </button>
+          </div>
         </div>
       </div>
     `;
