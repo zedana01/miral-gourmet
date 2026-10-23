@@ -3,9 +3,49 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>لوحة إدارة وتحكم ميرال جورميه | MIRAL GOURMET CMS</title>
+  <title>لوحة إدارة وتحكم ميرال جورميه ثنائية اللغة | MIRAL GOURMET CMS (AR / EN)</title>
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
   <link rel="stylesheet" href="css/admin.css">
+  <style>
+    .lang-switcher-bar {
+      display: inline-flex;
+      background: rgba(255, 255, 255, 0.05);
+      border: 1px solid rgba(197, 157, 63, 0.25);
+      border-radius: 9999px;
+      padding: 4px;
+      gap: 4px;
+      margin-bottom: 20px;
+    }
+    .lang-btn {
+      background: transparent;
+      border: none;
+      color: #94a3b8;
+      font-size: 13px;
+      font-weight: 700;
+      padding: 6px 16px;
+      border-radius: 9999px;
+      cursor: pointer;
+      display: inline-flex;
+      align-items: center;
+      gap: 6px;
+      transition: all 0.2s ease;
+    }
+    .lang-btn:hover {
+      color: #fff;
+    }
+    .lang-btn.active {
+      background: #c59d3f;
+      color: #121518;
+      box-shadow: 0 2px 8px rgba(197, 157, 63, 0.35);
+    }
+    .field-hint-en {
+      display: inline-block;
+      font-size: 11px;
+      color: #c59d3f;
+      margin-right: 6px;
+      font-weight: 600;
+    }
+  </style>
 </head>
 <body>
 
@@ -16,7 +56,7 @@
         <i class="fa-solid fa-utensils"></i>
       </div>
       <h2 style="font-size:24px; font-weight:900; margin-bottom:6px;">ميرال جورميه</h2>
-      <p style="font-size:13.5px; color:#94a3b8; margin-bottom:12px;">لوحة الإدارة والتحكم الشاملة في محتوى الموقع</p>
+      <p style="font-size:13.5px; color:#94a3b8; margin-bottom:12px;">لوحة الإدارة والتحكم الشاملة بالعربية والإنجليزية</p>
       <div style="background:rgba(197,157,63,0.1); border:1px solid rgba(197,157,63,0.25); padding:8px 14px; border-radius:8px; font-size:12.5px; color:#dfbe87; margin-bottom:15px;">
         رمز الدخول الافتراضي: <strong>1234</strong>
       </div>
@@ -39,7 +79,7 @@
         <div class="sidebar-logo-icon"><i class="fa-solid fa-utensils"></i></div>
         <div class="sidebar-logo-text">
           <h2>ميرال جورميه</h2>
-          <span>لوحة الإدارة والتحكم الشاملة</span>
+          <span>CMS ثنائي اللغة (AR / EN)</span>
         </div>
       </div>
 
@@ -49,7 +89,7 @@
           <span>لوحة الإحصائيات العامة</span>
         </a>
 
-        <div class="nav-group-title">إدارة المنيو والأصناف</div>
+        <div class="nav-group-title">إدارة المنيو والأصناف (عربي / English)</div>
         <a class="menu-link" onclick="switchTab('tabDishes', this)">
           <i class="fa-solid fa-utensils"></i>
           <span>قائمة الطعام والأطباق</span>
@@ -66,7 +106,7 @@
         </a>
         <a class="menu-link" onclick="switchTab('tabPageAbout', this)">
           <i class="fa-solid fa-circle-info"></i>
-          <span>2. قصة ميرال (عن ميرال)</span>
+          <span>2. قصة ميرال (About Us)</span>
         </a>
         <a class="menu-link" onclick="switchTab('tabPageMenu', this)">
           <i class="fa-solid fa-book-open"></i>
@@ -74,11 +114,11 @@
         </a>
         <a class="menu-link" onclick="switchTab('tabPageReservation', this)">
           <i class="fa-solid fa-calendar-days"></i>
-          <span>4. صفحة حجز طاولة وولائم</span>
+          <span>4. صفحة حجز طاولة (Reservation)</span>
         </a>
         <a class="menu-link" onclick="switchTab('tabPageContact', this)">
           <i class="fa-solid fa-headset"></i>
-          <span>5. صفحة اتصل بنا والفروع</span>
+          <span>5. صفحة اتصل بنا (Contact Us)</span>
         </a>
 
         <div class="nav-group-title">الطلبات والإعدادات</div>
@@ -116,7 +156,10 @@
         <h1 class="topbar-title" id="topbarTitle">لوحة الإحصائيات العامة</h1>
         <div class="topbar-actions">
           <a href="../index.html" target="_blank" class="btn btn-outline btn-sm">
-            <i class="fa-solid fa-globe"></i> معاينة الموقع الحي
+            <i class="fa-solid fa-globe"></i> الموقع العربي
+          </a>
+          <a href="../en/index.html" target="_blank" class="btn btn-outline btn-sm">
+            <i class="fa-solid fa-language"></i> English Site
           </a>
           <button class="btn btn-primary btn-sm" onclick="openAddDishModal()">
             <i class="fa-solid fa-plus"></i> إضافة طبق جديد
@@ -150,10 +193,10 @@
               </div>
             </div>
             <div class="metric-card">
-              <div class="metric-icon-box"><i class="fa-solid fa-eye"></i></div>
+              <div class="metric-icon-box"><i class="fa-solid fa-language"></i></div>
               <div class="metric-info">
-                <strong>100%</strong>
-                <span>كفاءة التزامن الحي</span>
+                <strong>ثنائي اللغة</strong>
+                <span>تزامن حي (عربي + إنجليزي)</span>
               </div>
             </div>
           </div>
@@ -164,13 +207,13 @@
             </div>
             <div style="display:flex; gap:12px; flex-wrap:wrap;">
               <button class="btn btn-primary" onclick="switchTab('tabDishes', document.querySelector('a[onclick*=\'tabDishes\']'))">
-                <i class="fa-solid fa-utensils"></i> إدارة الأطباق والأسعار
+                <i class="fa-solid fa-utensils"></i> إدارة الأطباق والأسعار (AR / EN)
               </button>
               <button class="btn btn-outline" onclick="switchTab('tabCategories', document.querySelector('a[onclick*=\'tabCategories\']'))">
-                <i class="fa-solid fa-layer-group"></i> إدارة وتعديل الأقسام
+                <i class="fa-solid fa-layer-group"></i> إدارة وتعديل الأقسام (AR / EN)
               </button>
               <button class="btn btn-outline" onclick="switchTab('tabPageAbout', document.querySelector('a[onclick*=\'tabPageAbout\']'))">
-                <i class="fa-solid fa-circle-info"></i> تعديل قصة ميرال (عن ميرال)
+                <i class="fa-solid fa-circle-info"></i> تعديل قصة ميرال (AR / EN)
               </button>
               <button class="btn btn-outline" onclick="switchTab('tabBookings', document.querySelector('a[onclick*=\'tabBookings\']'))">
                 <i class="fa-solid fa-clipboard-list"></i> استعراض الحجوزات
@@ -183,7 +226,7 @@
         <section id="tabDishes" class="admin-tab-pane" style="display:none;">
           <div class="card-panel">
             <div class="card-panel-header">
-              <h2 class="card-panel-title"><i class="fa-solid fa-utensils"></i> قائمة الطعام والأطباق (تحكم كامل: إضافة، تعديل، حذف)</h2>
+              <h2 class="card-panel-title"><i class="fa-solid fa-utensils"></i> قائمة الطعام والأطباق (تحكم كامل بالعربية والإنجليزية)</h2>
               <button class="btn btn-primary btn-sm" onclick="openAddDishModal()">
                 <i class="fa-solid fa-plus"></i> إضافة طبق جديد
               </button>
@@ -193,7 +236,7 @@
                 <thead>
                   <tr>
                     <th>الصورة</th>
-                    <th>اسم الطبق</th>
+                    <th>اسم الطبق (عربي / English)</th>
                     <th>القسم</th>
                     <th>السعر</th>
                     <th>السعرات</th>
@@ -213,7 +256,7 @@
         <section id="tabCategories" class="admin-tab-pane" style="display:none;">
           <div class="card-panel">
             <div class="card-panel-header">
-              <h2 class="card-panel-title"><i class="fa-solid fa-layer-group"></i> إدارة أقسام المنيو والتصنيفات (تحكم كامل: إضافة، تعديل، حذف)</h2>
+              <h2 class="card-panel-title"><i class="fa-solid fa-layer-group"></i> إدارة أقسام المنيو والتصنيفات (عربي / English)</h2>
               <button class="btn btn-primary btn-sm" onclick="openAddCategoryModal()">
                 <i class="fa-solid fa-plus"></i> إضافة قسم جديد
               </button>
@@ -222,9 +265,10 @@
               <table class="admin-table">
                 <thead>
                   <tr>
-                    <th>اسم القسم (عربي)</th>
+                    <th>اسم القسم بالعربية</th>
+                    <th>English Category Name</th>
                     <th>المعرف البرمجي (Slug)</th>
-                    <th>الشارة الترويجية</th>
+                    <th>الشارة (AR / EN)</th>
                     <th>إجراءات التحكم</th>
                   </tr>
                 </thead>
@@ -240,30 +284,41 @@
         <section id="tabPageHome" class="admin-tab-pane" style="display:none;">
           <div class="card-panel">
             <div class="card-panel-header">
-              <h2 class="card-panel-title"><i class="fa-solid fa-house"></i> تعديل محتوى وصور الصفحة الرئيسية (index.html)</h2>
+              <h2 class="card-panel-title"><i class="fa-solid fa-house"></i> تعديل محتوى وصور الصفحة الرئيسية (Home Page)</h2>
               <div style="display:flex; gap:10px;">
-                <button class="btn btn-primary" onclick="savePageData('home')"><i class="fa-solid fa-floppy-disk"></i> حفظ تعديلات الرئيسية</button>
+                <button class="btn btn-primary" onclick="savePageData('home')"><i class="fa-solid fa-floppy-disk"></i> حفظ تعديلات الرئيسية (AR & EN)</button>
                 <button class="btn btn-outline" onclick="resetPageData('home')"><i class="fa-solid fa-rotate-left"></i> إلغاء والتراجع</button>
               </div>
             </div>
 
-            <div class="admin-form-grid">
+            <!-- Language Tabs -->
+            <div class="lang-switcher-bar">
+              <button type="button" class="lang-btn active" onclick="switchPageLang('home', 'ar', this)">
+                🇸🇦 المحتوى بالعربية
+              </button>
+              <button type="button" class="lang-btn" onclick="switchPageLang('home', 'en', this)">
+                🇬🇧 English Content
+              </button>
+            </div>
+
+            <!-- ARABIC HOME FIELDS -->
+            <div id="homeFieldsAr" class="admin-form-grid">
               <div class="form-group-admin">
-                <label>شارة البانر العلوية (Hero Badge) *</label>
+                <label>شارة البانر العلوية (Hero Badge - عربي) *</label>
                 <input type="text" id="homeHeroBadge" class="form-control-admin">
               </div>
               <div class="form-group-admin">
-                <label>العنوان الرئيسي للباهر (Hero Title) *</label>
+                <label>العنوان الرئيسي للبانر (Hero Title - عربي) *</label>
                 <input type="text" id="homeHeroTitle" class="form-control-admin">
               </div>
               <div class="form-group-admin form-full">
-                <label>الوصف الترويجي في البانر (Hero Description) *</label>
+                <label>الوصف الترويجي في البانر (Hero Description - عربي) *</label>
                 <textarea id="homeHeroDesc" class="form-control-admin"></textarea>
               </div>
 
-              <!-- Hero Image Upload -->
+              <!-- Shared Hero Image Upload -->
               <div class="form-group-admin form-full">
-                <label>صورة خلفية البانر الرئيسي *</label>
+                <label>صورة خلفية البانر الرئيسي (مشتركة لكلا اللغتين) *</label>
                 <input type="text" id="homeHeroImage" class="form-control-admin" placeholder="رابط الصورة أو ارفعها أدناه">
                 <div class="image-upload-wrapper" style="margin-top:10px;">
                   <input type="file" id="heroFileInput" accept="image/*" style="display:none;" onchange="handleFileUpload(this, 'homeHeroImage', 'homeHeroPreview')">
@@ -277,21 +332,21 @@
               </div>
 
               <div class="form-group-admin form-full">
-                <label>عنوان قصة ميرال في الصفحة الرئيسية *</label>
+                <label>عنوان قصة ميرال في الصفحة الرئيسية (عربي) *</label>
                 <input type="text" id="homeStoryTitle" class="form-control-admin">
               </div>
               <div class="form-group-admin form-full">
-                <label>الفقرة الأولى في قصة ميرال *</label>
+                <label>الفقرة الأولى في قصة ميرال (عربي) *</label>
                 <textarea id="homeStoryP1" class="form-control-admin"></textarea>
               </div>
               <div class="form-group-admin form-full">
-                <label>الفقرة الثانية في قصة ميرال *</label>
+                <label>الفقرة الثانية في قصة ميرال (عربي) *</label>
                 <textarea id="homeStoryP2" class="form-control-admin"></textarea>
               </div>
 
-              <!-- Story Image Upload -->
+              <!-- Shared Story Image Upload -->
               <div class="form-group-admin form-full">
-                <label>صورة قصة ميرال (Story Image) *</label>
+                <label>صورة قصة ميرال (مشتركة لكلا اللغتين) *</label>
                 <input type="text" id="homeStoryImage" class="form-control-admin">
                 <div class="image-upload-wrapper" style="margin-top:10px;">
                   <input type="file" id="storyFileInput" accept="image/*" style="display:none;" onchange="handleFileUpload(this, 'homeStoryImage', 'homeStoryPreview')">
@@ -305,14 +360,53 @@
               </div>
 
               <div class="form-group-admin">
-                <label>اقتباس الشيف التنفيذي *</label>
+                <label>اقتباس الشيف التنفيذي (عربي) *</label>
                 <input type="text" id="homeQuoteText" class="form-control-admin">
               </div>
               <div class="form-group-admin">
-                <label>اسم وصفة الشيف *</label>
+                <label>اسم وصفة الشيف (عربي) *</label>
                 <input type="text" id="homeChefName" class="form-control-admin">
               </div>
             </div>
+
+            <!-- ENGLISH HOME FIELDS -->
+            <div id="homeFieldsEn" class="admin-form-grid" style="display:none;">
+              <div class="form-group-admin">
+                <label>Hero Badge (English) <span class="field-hint-en">🇬🇧 English</span> *</label>
+                <input type="text" id="homeHeroBadgeEn" class="form-control-admin" style="direction:ltr;">
+              </div>
+              <div class="form-group-admin">
+                <label>Hero Title (English) <span class="field-hint-en">🇬🇧 English</span> *</label>
+                <input type="text" id="homeHeroTitleEn" class="form-control-admin" style="direction:ltr;">
+              </div>
+              <div class="form-group-admin form-full">
+                <label>Hero Description (English) <span class="field-hint-en">🇬🇧 English</span> *</label>
+                <textarea id="homeHeroDescEn" class="form-control-admin" style="direction:ltr;"></textarea>
+              </div>
+
+              <div class="form-group-admin form-full">
+                <label>Story Section Title (English) <span class="field-hint-en">🇬🇧 English</span> *</label>
+                <input type="text" id="homeStoryTitleEn" class="form-control-admin" style="direction:ltr;">
+              </div>
+              <div class="form-group-admin form-full">
+                <label>Story Paragraph 1 (English) <span class="field-hint-en">🇬🇧 English</span> *</label>
+                <textarea id="homeStoryP1En" class="form-control-admin" style="direction:ltr;"></textarea>
+              </div>
+              <div class="form-group-admin form-full">
+                <label>Story Paragraph 2 (English) <span class="field-hint-en">🇬🇧 English</span> *</label>
+                <textarea id="homeStoryP2En" class="form-control-admin" style="direction:ltr;"></textarea>
+              </div>
+
+              <div class="form-group-admin">
+                <label>Executive Chef Quote (English) <span class="field-hint-en">🇬🇧 English</span> *</label>
+                <input type="text" id="homeQuoteTextEn" class="form-control-admin" style="direction:ltr;">
+              </div>
+              <div class="form-group-admin">
+                <label>Executive Chef Title / Name (English) <span class="field-hint-en">🇬🇧 English</span> *</label>
+                <input type="text" id="homeChefNameEn" class="form-control-admin" style="direction:ltr;">
+              </div>
+            </div>
+
           </div>
         </section>
 
@@ -320,38 +414,49 @@
         <section id="tabPageAbout" class="admin-tab-pane" style="display:none;">
           <div class="card-panel">
             <div class="card-panel-header">
-              <h2 class="card-panel-title"><i class="fa-solid fa-circle-info"></i> تعديل محتوى وصور قصة ميرال (عن ميرال - about.html)</h2>
+              <h2 class="card-panel-title"><i class="fa-solid fa-circle-info"></i> تعديل محتوى وصور قصة ميرال (About Us)</h2>
               <div style="display:flex; gap:10px;">
-                <button class="btn btn-primary" onclick="savePageData('about')"><i class="fa-solid fa-floppy-disk"></i> حفظ تعديلات قصة ميرال</button>
+                <button class="btn btn-primary" onclick="savePageData('about')"><i class="fa-solid fa-floppy-disk"></i> حفظ تعديلات قصة ميرال (AR & EN)</button>
                 <button class="btn btn-outline" onclick="resetPageData('about')"><i class="fa-solid fa-rotate-left"></i> إلغاء والتراجع</button>
               </div>
             </div>
 
-            <div class="admin-form-grid">
+            <!-- Language Tabs -->
+            <div class="lang-switcher-bar">
+              <button type="button" class="lang-btn active" onclick="switchPageLang('about', 'ar', this)">
+                🇸🇦 المحتوى بالعربية
+              </button>
+              <button type="button" class="lang-btn" onclick="switchPageLang('about', 'en', this)">
+                🇬🇧 English Content
+              </button>
+            </div>
+
+            <!-- ARABIC ABOUT FIELDS -->
+            <div id="aboutFieldsAr" class="admin-form-grid">
               <div class="form-group-admin">
-                <label>عنوان البانر العلوي (Page Title) *</label>
+                <label>عنوان البانر العلوي (عربي) *</label>
                 <input type="text" id="aboutPageTitle" class="form-control-admin">
               </div>
               <div class="form-group-admin">
-                <label>الوصف الترويجي في البانر (Subtitle) *</label>
+                <label>الوصف الترويجي في البانر (عربي) *</label>
                 <input type="text" id="aboutPageSubtitle" class="form-control-admin">
               </div>
               <div class="form-group-admin form-full">
-                <label>عنوان القصة الرئيسي (Story Headline) *</label>
+                <label>عنوان القصة الرئيسي (Story Headline - عربي) *</label>
                 <input type="text" id="aboutStoryHeadline" class="form-control-admin">
               </div>
               <div class="form-group-admin form-full">
-                <label>الفقرة الأولى في قصة عن ميرال *</label>
+                <label>الفقرة الأولى في قصة عن ميرال (عربي) *</label>
                 <textarea id="aboutP1" class="form-control-admin"></textarea>
               </div>
               <div class="form-group-admin form-full">
-                <label>الفقرة الثانية في قصة عن ميرال *</label>
+                <label>الفقرة الثانية في قصة عن ميرال (عربي) *</label>
                 <textarea id="aboutP2" class="form-control-admin"></textarea>
               </div>
 
               <!-- About Image Upload -->
               <div class="form-group-admin form-full">
-                <label>صورة قصة ميرال في صفحة عن ميرال *</label>
+                <label>صورة قصة ميرال في صفحة عن ميرال (مشتركة) *</label>
                 <input type="text" id="aboutStoryImage" class="form-control-admin">
                 <div class="image-upload-wrapper" style="margin-top:10px;">
                   <input type="file" id="aboutFileInput" accept="image/*" style="display:none;" onchange="handleFileUpload(this, 'aboutStoryImage', 'aboutStoryPreview')">
@@ -365,14 +470,47 @@
               </div>
 
               <div class="form-group-admin">
-                <label>اقتباس الشيف في صفحة من نحن *</label>
+                <label>اقتباس الشيف في صفحة من نحن (عربي) *</label>
                 <input type="text" id="aboutChefQuote" class="form-control-admin">
               </div>
               <div class="form-group-admin">
-                <label>اسم الشيف *</label>
+                <label>اسم الشيف (عربي) *</label>
                 <input type="text" id="aboutChefName" class="form-control-admin">
               </div>
             </div>
+
+            <!-- ENGLISH ABOUT FIELDS -->
+            <div id="aboutFieldsEn" class="admin-form-grid" style="display:none;">
+              <div class="form-group-admin">
+                <label>Page Banner Title (English) <span class="field-hint-en">🇬🇧 English</span> *</label>
+                <input type="text" id="aboutPageTitleEn" class="form-control-admin" style="direction:ltr;">
+              </div>
+              <div class="form-group-admin">
+                <label>Page Subtitle (English) <span class="field-hint-en">🇬🇧 English</span> *</label>
+                <input type="text" id="aboutPageSubtitleEn" class="form-control-admin" style="direction:ltr;">
+              </div>
+              <div class="form-group-admin form-full">
+                <label>Story Headline (English) <span class="field-hint-en">🇬🇧 English</span> *</label>
+                <input type="text" id="aboutStoryHeadlineEn" class="form-control-admin" style="direction:ltr;">
+              </div>
+              <div class="form-group-admin form-full">
+                <label>Story Paragraph 1 (English) <span class="field-hint-en">🇬🇧 English</span> *</label>
+                <textarea id="aboutP1En" class="form-control-admin" style="direction:ltr;"></textarea>
+              </div>
+              <div class="form-group-admin form-full">
+                <label>Story Paragraph 2 (English) <span class="field-hint-en">🇬🇧 English</span> *</label>
+                <textarea id="aboutP2En" class="form-control-admin" style="direction:ltr;"></textarea>
+              </div>
+              <div class="form-group-admin">
+                <label>Chef Quote (English) <span class="field-hint-en">🇬🇧 English</span> *</label>
+                <input type="text" id="aboutChefQuoteEn" class="form-control-admin" style="direction:ltr;">
+              </div>
+              <div class="form-group-admin">
+                <label>Chef Name (English) <span class="field-hint-en">🇬🇧 English</span> *</label>
+                <input type="text" id="aboutChefNameEn" class="form-control-admin" style="direction:ltr;">
+              </div>
+            </div>
+
           </div>
         </section>
 
@@ -380,22 +518,47 @@
         <section id="tabPageMenu" class="admin-tab-pane" style="display:none;">
           <div class="card-panel">
             <div class="card-panel-header">
-              <h2 class="card-panel-title"><i class="fa-solid fa-book-open"></i> تعديل نصوص صفحة قائمة الطعام (menu.html)</h2>
+              <h2 class="card-panel-title"><i class="fa-solid fa-book-open"></i> تعديل نصوص صفحة قائمة الطعام (Menu Page)</h2>
               <div style="display:flex; gap:10px;">
-                <button class="btn btn-primary" onclick="savePageData('menu')"><i class="fa-solid fa-floppy-disk"></i> حفظ تعديلات المنيو</button>
+                <button class="btn btn-primary" onclick="savePageData('menu')"><i class="fa-solid fa-floppy-disk"></i> حفظ تعديلات المنيو (AR & EN)</button>
                 <button class="btn btn-outline" onclick="resetPageData('menu')"><i class="fa-solid fa-rotate-left"></i> إلغاء والتراجع</button>
               </div>
             </div>
-            <div class="admin-form-grid">
+
+            <!-- Language Tabs -->
+            <div class="lang-switcher-bar">
+              <button type="button" class="lang-btn active" onclick="switchPageLang('menu', 'ar', this)">
+                🇸🇦 المحتوى بالعربية
+              </button>
+              <button type="button" class="lang-btn" onclick="switchPageLang('menu', 'en', this)">
+                🇬🇧 English Content
+              </button>
+            </div>
+
+            <!-- ARABIC MENU FIELDS -->
+            <div id="menuFieldsAr" class="admin-form-grid">
               <div class="form-group-admin">
-                <label>عنوان صفحة قائمة الطعام العلوي *</label>
+                <label>عنوان صفحة قائمة الطعام العلوي (عربي) *</label>
                 <input type="text" id="menuPageTitle" class="form-control-admin">
               </div>
               <div class="form-group-admin">
-                <label>الوصف الفرعي لقائمة الطعام *</label>
+                <label>الوصف الفرعي لقائمة الطعام (عربي) *</label>
                 <input type="text" id="menuPageSubtitle" class="form-control-admin">
               </div>
             </div>
+
+            <!-- ENGLISH MENU FIELDS -->
+            <div id="menuFieldsEn" class="admin-form-grid" style="display:none;">
+              <div class="form-group-admin">
+                <label>Menu Page Title (English) <span class="field-hint-en">🇬🇧 English</span> *</label>
+                <input type="text" id="menuPageTitleEn" class="form-control-admin" style="direction:ltr;">
+              </div>
+              <div class="form-group-admin">
+                <label>Menu Page Subtitle (English) <span class="field-hint-en">🇬🇧 English</span> *</label>
+                <input type="text" id="menuPageSubtitleEn" class="form-control-admin" style="direction:ltr;">
+              </div>
+            </div>
+
           </div>
         </section>
 
@@ -403,26 +566,51 @@
         <section id="tabPageReservation" class="admin-tab-pane" style="display:none;">
           <div class="card-panel">
             <div class="card-panel-header">
-              <h2 class="card-panel-title"><i class="fa-solid fa-calendar-days"></i> تعديل نصوص وبيانات صفحة حجز طاولة (reservation.html)</h2>
+              <h2 class="card-panel-title"><i class="fa-solid fa-calendar-days"></i> تعديل نصوص وبيانات صفحة حجز طاولة (Reservation)</h2>
               <div style="display:flex; gap:10px;">
-                <button class="btn btn-primary" onclick="savePageData('reservation')"><i class="fa-solid fa-floppy-disk"></i> حفظ تعديلات صفحة الحجز</button>
+                <button class="btn btn-primary" onclick="savePageData('reservation')"><i class="fa-solid fa-floppy-disk"></i> حفظ تعديلات صفحة الحجز (AR & EN)</button>
                 <button class="btn btn-outline" onclick="resetPageData('reservation')"><i class="fa-solid fa-rotate-left"></i> إلغاء والتراجع</button>
               </div>
             </div>
-            <div class="admin-form-grid">
+
+            <!-- Language Tabs -->
+            <div class="lang-switcher-bar">
+              <button type="button" class="lang-btn active" onclick="switchPageLang('reservation', 'ar', this)">
+                🇸🇦 المحتوى بالعربية
+              </button>
+              <button type="button" class="lang-btn" onclick="switchPageLang('reservation', 'en', this)">
+                🇬🇧 English Content
+              </button>
+            </div>
+
+            <!-- ARABIC RESERVATION FIELDS -->
+            <div id="reservationFieldsAr" class="admin-form-grid">
               <div class="form-group-admin">
-                <label>عنوان صفحة الحجز العلوي *</label>
+                <label>عنوان صفحة الحجز العلوي (عربي) *</label>
                 <input type="text" id="resPageTitle" class="form-control-admin">
               </div>
               <div class="form-group-admin">
-                <label>الوصف الفرعي لصفحة الحجز *</label>
+                <label>الوصف الفرعي لصفحة الحجز (عربي) *</label>
                 <input type="text" id="resPageSubtitle" class="form-control-admin">
               </div>
               <div class="form-group-admin">
                 <label>هاتف الواتساب المخصص للحجوزات *</label>
-                <input type="text" id="resWhatsapp" class="form-control-admin">
+                <input type="text" id="resWhatsapp" class="form-control-admin" style="direction:ltr;">
               </div>
             </div>
+
+            <!-- ENGLISH RESERVATION FIELDS -->
+            <div id="reservationFieldsEn" class="admin-form-grid" style="display:none;">
+              <div class="form-group-admin">
+                <label>Reservation Page Title (English) <span class="field-hint-en">🇬🇧 English</span> *</label>
+                <input type="text" id="resPageTitleEn" class="form-control-admin" style="direction:ltr;">
+              </div>
+              <div class="form-group-admin">
+                <label>Reservation Page Subtitle (English) <span class="field-hint-en">🇬🇧 English</span> *</label>
+                <input type="text" id="resPageSubtitleEn" class="form-control-admin" style="direction:ltr;">
+              </div>
+            </div>
+
           </div>
         </section>
 
@@ -430,34 +618,67 @@
         <section id="tabPageContact" class="admin-tab-pane" style="display:none;">
           <div class="card-panel">
             <div class="card-panel-header">
-              <h2 class="card-panel-title"><i class="fa-solid fa-headset"></i> تعديل نصوص وبيانات صفحة اتصل بنا (contact.html)</h2>
+              <h2 class="card-panel-title"><i class="fa-solid fa-headset"></i> تعديل نصوص وبيانات صفحة اتصل بنا (Contact Us)</h2>
               <div style="display:flex; gap:10px;">
-                <button class="btn btn-primary" onclick="savePageData('contact')"><i class="fa-solid fa-floppy-disk"></i> حفظ تعديلات صفحة التواصل</button>
+                <button class="btn btn-primary" onclick="savePageData('contact')"><i class="fa-solid fa-floppy-disk"></i> حفظ تعديلات صفحة التواصل (AR & EN)</button>
                 <button class="btn btn-outline" onclick="resetPageData('contact')"><i class="fa-solid fa-rotate-left"></i> إلغاء والتراجع</button>
               </div>
             </div>
-            <div class="admin-form-grid">
+
+            <!-- Language Tabs -->
+            <div class="lang-switcher-bar">
+              <button type="button" class="lang-btn active" onclick="switchPageLang('contact', 'ar', this)">
+                🇸🇦 المحتوى بالعربية
+              </button>
+              <button type="button" class="lang-btn" onclick="switchPageLang('contact', 'en', this)">
+                🇬🇧 English Content
+              </button>
+            </div>
+
+            <!-- ARABIC CONTACT FIELDS -->
+            <div id="contactFieldsAr" class="admin-form-grid">
               <div class="form-group-admin">
-                <label>عنوان صفحة اتصل بنا العلوي *</label>
+                <label>عنوان صفحة اتصل بنا العلوي (عربي) *</label>
                 <input type="text" id="contactPageTitle" class="form-control-admin">
               </div>
               <div class="form-group-admin">
-                <label>الوصف الفرعي لصفحة التواصل *</label>
+                <label>الوصف الفرعي لصفحة التواصل (عربي) *</label>
                 <input type="text" id="contactPageSubtitle" class="form-control-admin">
               </div>
               <div class="form-group-admin">
-                <label>عنوان الفرع الرئيسي (الرياض) *</label>
+                <label>عنوان الفرع الرئيسي بالرياض (عربي) *</label>
                 <input type="text" id="contactAddress" class="form-control-admin">
               </div>
               <div class="form-group-admin">
                 <label>هاتف الاستفسارات المباشر *</label>
-                <input type="text" id="contactPhone" class="form-control-admin">
+                <input type="text" id="contactPhone" class="form-control-admin" style="direction:ltr;">
               </div>
               <div class="form-group-admin form-full">
-                <label>مواعيد وأوقات العمل *</label>
+                <label>مواعيد وأوقات العمل (عربي) *</label>
                 <input type="text" id="contactHours" class="form-control-admin">
               </div>
             </div>
+
+            <!-- ENGLISH CONTACT FIELDS -->
+            <div id="contactFieldsEn" class="admin-form-grid" style="display:none;">
+              <div class="form-group-admin">
+                <label>Contact Page Title (English) <span class="field-hint-en">🇬🇧 English</span> *</label>
+                <input type="text" id="contactPageTitleEn" class="form-control-admin" style="direction:ltr;">
+              </div>
+              <div class="form-group-admin">
+                <label>Contact Page Subtitle (English) <span class="field-hint-en">🇬🇧 English</span> *</label>
+                <input type="text" id="contactPageSubtitleEn" class="form-control-admin" style="direction:ltr;">
+              </div>
+              <div class="form-group-admin">
+                <label>Main Branch Address (English) <span class="field-hint-en">🇬🇧 English</span> *</label>
+                <input type="text" id="contactAddressEn" class="form-control-admin" style="direction:ltr;">
+              </div>
+              <div class="form-group-admin form-full">
+                <label>Operating Working Hours (English) <span class="field-hint-en">🇬🇧 English</span> *</label>
+                <input type="text" id="contactHoursEn" class="form-control-admin" style="direction:ltr;">
+              </div>
+            </div>
+
           </div>
         </section>
 
@@ -493,36 +714,48 @@
         <section id="tabSettings" class="admin-tab-pane" style="display:none;">
           <div class="card-panel">
             <div class="card-panel-header">
-              <h2 class="card-panel-title"><i class="fa-solid fa-sliders"></i> بيانات المطعم والتواصل العامة</h2>
+              <h2 class="card-panel-title"><i class="fa-solid fa-sliders"></i> بيانات المطعم والتواصل العامة (عربي / English)</h2>
             </div>
             <form onsubmit="saveSettings(event)">
               <div class="admin-form-grid">
                 <div class="form-group-admin">
-                  <label>اسم المطعم الرسمي *</label>
+                  <label>اسم المطعم الرسمي (عربي) *</label>
                   <input type="text" id="setRestName" class="form-control-admin" required>
                 </div>
                 <div class="form-group-admin">
+                  <label>Official Restaurant Name (English) <span class="field-hint-en">🇬🇧 English</span> *</label>
+                  <input type="text" id="setRestNameEn" class="form-control-admin" style="direction:ltr;" required>
+                </div>
+                <div class="form-group-admin">
                   <label>هاتف الحجوزات المباشر *</label>
-                  <input type="text" id="setPhone" class="form-control-admin" required>
+                  <input type="text" id="setPhone" class="form-control-admin" style="direction:ltr;" required>
                 </div>
                 <div class="form-group-admin">
                   <label>رقم الواتساب *</label>
-                  <input type="text" id="setWhatsapp" class="form-control-admin">
+                  <input type="text" id="setWhatsapp" class="form-control-admin" style="direction:ltr;">
                 </div>
                 <div class="form-group-admin">
                   <label>البريد الإلكتروني للإدارة *</label>
-                  <input type="email" id="setEmail" class="form-control-admin">
+                  <input type="email" id="setEmail" class="form-control-admin" style="direction:ltr;">
+                </div>
+                <div class="form-group-admin">
+                  <label>ساعات العمل (English) <span class="field-hint-en">🇬🇧 English</span> *</label>
+                  <input type="text" id="setHoursEn" class="form-control-admin" style="direction:ltr;">
                 </div>
                 <div class="form-group-admin form-full">
-                  <label>العنوان التفصيلي *</label>
+                  <label>العنوان التفصيلي (عربي) *</label>
                   <input type="text" id="setAddress" class="form-control-admin">
                 </div>
                 <div class="form-group-admin form-full">
-                  <label>أوقات وساعات العمل *</label>
+                  <label>Detailed Address (English) <span class="field-hint-en">🇬🇧 English</span> *</label>
+                  <input type="text" id="setAddressEn" class="form-control-admin" style="direction:ltr;">
+                </div>
+                <div class="form-group-admin form-full">
+                  <label>أوقات وساعات العمل (عربي) *</label>
                   <input type="text" id="setHours" class="form-control-admin">
                 </div>
                 <div class="form-group-admin form-full">
-                  <button type="submit" class="btn btn-primary"><i class="fa-solid fa-floppy-disk"></i> حفظ الإعدادات</button>
+                  <button type="submit" class="btn btn-primary"><i class="fa-solid fa-floppy-disk"></i> حفظ الإعدادات (AR & EN)</button>
                 </div>
               </div>
             </form>
@@ -536,7 +769,7 @@
               <h2 class="card-panel-title"><i class="fa-solid fa-database"></i> إدارة النسخ الاحتياطي واستعادة البيانات</h2>
             </div>
             <p style="font-size:14.5px; color:#cbd5e1; margin-bottom:24px;">
-              يمكنك تصدير نسخة احتياطية كاملة من جميع الأطباق والأقسام وتعديلات الصفحات والحجوزات وحفظها كملف JSON، أو استعادتها لاحقاً.
+              يمكنك تصدير نسخة احتياطية كاملة من جميع الأطباق والأقسام وتعديلات الصفحات الثنائية (عربي وإنجليزي) والحجوزات وحفظها كملف JSON، أو استعادتها لاحقاً.
             </p>
             <div style="display:flex; gap:16px; flex-wrap:wrap;">
               <button class="btn btn-primary" onclick="exportBackup()">
@@ -558,9 +791,9 @@
     </main>
   </div>
 
-  <!-- DISH MODAL (Add / Edit) -->
+  <!-- DISH MODAL (Add / Edit - Bilingual) -->
   <div class="admin-modal-backdrop" id="dishModal">
-    <div class="admin-modal-box">
+    <div class="admin-modal-box" style="max-width:760px;">
       <div style="display:flex; justify-content:space-between; align-items:center; margin-bottom:20px;">
         <h3 id="dishModalTitle" style="font-size:18px; font-weight:900; color:#fff;">إضافة طبق جديد</h3>
         <button type="button" class="btn btn-outline btn-sm" onclick="closeDishModal()"><i class="fa-solid fa-xmark"></i></button>
@@ -568,10 +801,18 @@
       <form id="dishForm" onsubmit="saveDish(event)">
         <input type="hidden" id="dishIdInput">
         <div class="admin-form-grid">
-          <div class="form-group-admin form-full">
-            <label>اسم الطبق *</label>
-            <input type="text" id="dishTitleInput" class="form-control-admin" required>
+          
+          <!-- Dish Titles -->
+          <div class="form-group-admin">
+            <label>اسم الطبق (عربي) *</label>
+            <input type="text" id="dishTitleInput" class="form-control-admin" placeholder="مثال: ريش الضأن المشوية" required>
           </div>
+          <div class="form-group-admin">
+            <label>Dish Name (English) <span class="field-hint-en">🇬🇧 English</span> *</label>
+            <input type="text" id="dishTitleEnInput" class="form-control-admin" placeholder="e.g. Grilled Lamb Chops" style="direction:ltr;" required>
+          </div>
+
+          <!-- Price & Category -->
           <div class="form-group-admin">
             <label>السعر (ر.س) *</label>
             <input type="number" id="dishPriceInput" step="0.5" class="form-control-admin" required>
@@ -580,17 +821,29 @@
             <label>القسم / التصنيف *</label>
             <select id="dishCategoryInput" class="form-control-admin" required></select>
           </div>
+
+          <!-- Calories & Badges -->
           <div class="form-group-admin">
-            <label>السعرات الحرارية</label>
+            <label>السعرات الحرارية (kcal)</label>
             <input type="number" id="dishCalInput" class="form-control-admin">
           </div>
           <div class="form-group-admin">
-            <label>الشارة المميزة (Badge)</label>
+            <label>الشارة المميزة (عربي)</label>
             <input type="text" id="dishBadgeInput" class="form-control-admin" placeholder="مثال: اختيار الشيف">
           </div>
           <div class="form-group-admin form-full">
-            <label>وصف ومكونات الطبق *</label>
-            <textarea id="dishDescInput" class="form-control-admin" required></textarea>
+            <label>Badge Tag (English) <span class="field-hint-en">🇬🇧 English</span></label>
+            <input type="text" id="dishBadgeEnInput" class="form-control-admin" placeholder="e.g. Chef's Selection" style="direction:ltr;">
+          </div>
+
+          <!-- Descriptions -->
+          <div class="form-group-admin form-full">
+            <label>وصف ومكونات الطبق (عربي) *</label>
+            <textarea id="dishDescInput" class="form-control-admin" placeholder="اكتب وصف الطبق بالعربية..." required></textarea>
+          </div>
+          <div class="form-group-admin form-full">
+            <label>Dish Description (English) <span class="field-hint-en">🇬🇧 English</span> *</label>
+            <textarea id="dishDescEnInput" class="form-control-admin" placeholder="Write dish description in English..." style="direction:ltr;" required></textarea>
           </div>
           
           <!-- Dish Image Upload -->
@@ -615,14 +868,14 @@
 
           <div class="form-group-admin form-full" style="margin-top:15px; display:flex; gap:12px; justify-content:flex-end;">
             <button type="button" class="btn btn-outline" onclick="closeDishModal()">إلغاء</button>
-            <button type="submit" class="btn btn-primary"><i class="fa-solid fa-floppy-disk"></i> حفظ الطبق</button>
+            <button type="submit" class="btn btn-primary"><i class="fa-solid fa-floppy-disk"></i> حفظ الطبق باللغتين</button>
           </div>
         </div>
       </form>
     </div>
   </div>
 
-  <!-- CATEGORY MODAL (Add / Edit) -->
+  <!-- CATEGORY MODAL (Add / Edit - Bilingual) -->
   <div class="admin-modal-backdrop" id="categoryModal">
     <div class="admin-modal-box">
       <div style="display:flex; justify-content:space-between; align-items:center; margin-bottom:20px;">
@@ -633,20 +886,28 @@
         <input type="hidden" id="catIdInput">
         <div class="admin-form-grid">
           <div class="form-group-admin form-full">
-            <label>اسم القسم (عربي) *</label>
+            <label>اسم القسم بالعربية *</label>
             <input type="text" id="catNameInput" class="form-control-admin" placeholder="مثال: بحريات طازجة" required>
           </div>
           <div class="form-group-admin form-full">
-            <label>المعرف بالإنجليزية (Slug - للأقسام البرمجية) *</label>
-            <input type="text" id="catSlugInput" class="form-control-admin" placeholder="مثال: seafood" required>
+            <label>Category Name (English) <span class="field-hint-en">🇬🇧 English</span> *</label>
+            <input type="text" id="catNameEnInput" class="form-control-admin" placeholder="e.g. Fresh Seafood" style="direction:ltr;" required>
           </div>
           <div class="form-group-admin form-full">
-            <label>الشارة الترويجية المميزة (Badge)</label>
+            <label>المعرف البرمجي بالإنجليزية (Slug) *</label>
+            <input type="text" id="catSlugInput" class="form-control-admin" placeholder="مثال: seafood" style="direction:ltr;" required>
+          </div>
+          <div class="form-group-admin form-full">
+            <label>الشارة الترويجية بالعربية (Badge)</label>
             <input type="text" id="catBadgeInput" class="form-control-admin" placeholder="مثال: صيد اليوم الطازج">
+          </div>
+          <div class="form-group-admin form-full">
+            <label>Badge (English) <span class="field-hint-en">🇬🇧 English</span></label>
+            <input type="text" id="catBadgeEnInput" class="form-control-admin" placeholder="e.g. Daily Catch" style="direction:ltr;">
           </div>
           <div class="form-group-admin form-full" style="margin-top:15px; display:flex; gap:12px; justify-content:flex-end;">
             <button type="button" class="btn btn-outline" onclick="closeCategoryModal()">إلغاء</button>
-            <button type="submit" class="btn btn-primary"><i class="fa-solid fa-floppy-disk"></i> حفظ القسم</button>
+            <button type="submit" class="btn btn-primary"><i class="fa-solid fa-floppy-disk"></i> حفظ القسم باللغتين</button>
           </div>
         </div>
       </form>

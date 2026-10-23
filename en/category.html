@@ -218,18 +218,18 @@
         badge: "The Complete Royal Table"
       };
 
-      document.getElementById('categoryPageTitle').innerText = currentCat.name;
-      document.getElementById('breadcrumbCategoryName').innerText = currentCat.name;
-      document.getElementById('categoryBadgeText').innerText = currentCat.badge || 'Category';
-      document.getElementById('categoryHeading').innerText = 'Course: ' + currentCat.name;
-      document.title = currentCat.name + ' | Miral Gourmet';
+      document.getElementById('categoryPageTitle').innerText = currentCat.nameEn || currentCat.name;
+      document.getElementById('breadcrumbCategoryName').innerText = currentCat.nameEn || currentCat.name;
+      document.getElementById('categoryBadgeText').innerText = currentCat.badgeEn || currentCat.badge || 'Fine Dining';
+      document.getElementById('categoryHeading').innerText = 'Course: ' + (currentCat.nameEn || currentCat.name);
+      document.title = (currentCat.nameEn || currentCat.name) + ' | Miral Gourmet';
 
       var pillsContainer = document.getElementById('categoryPillsBar');
       if (pillsContainer && data.categories) {
         var pillsHtml = '';
         data.categories.forEach(function(cat) {
           var isActive = cat.slug === catSlug ? 'active' : '';
-          pillsHtml += '<a href="category.html?cat=' + cat.slug + '" class="menu-tab-btn ' + isActive + '">' + cat.name + '</a>';
+          pillsHtml += '<a href="category.html?cat=' + cat.slug + '" class="menu-tab-btn ' + isActive + '">' + (cat.nameEn || cat.name) + '</a>';
         });
         pillsContainer.innerHTML = pillsHtml;
       }
@@ -241,14 +241,14 @@
 
         var html = '';
         filtered.forEach(function(dish) {
-          var tagText = (dish.tags && dish.tags[0]) || dish.badge || 'Fine Dining';
+          var tagText = (dish.tagsEn && dish.tagsEn[0]) || dish.badgeEn || dish.badge || 'Fine Dining';
           html += `
             <div class="dish-card">
               <div class="dish-img-wrapper">
                 <a href="product.html?id=` + dish.id + `">
-                  <img src="` + dish.image + `" alt="` + dish.title + `" class="dish-img" loading="lazy">
+                  <img src="` + dish.image + `" alt="` + (dish.titleEn || dish.title) + `" class="dish-img" loading="lazy">
                 </a>
-                <span class="dish-badge">` + (dish.badge || 'Special') + `</span>
+                <span class="dish-badge">` + (dish.badgeEn || dish.badge || 'Special') + `</span>
                 <span class="dish-price-tag">` + dish.price + ` SAR</span>
               </div>
               <div class="dish-info">
@@ -257,14 +257,14 @@
                   <span class="dish-tag" style="background:rgba(20,23,26,0.06); color:var(--text-secondary);"><i class="fa-solid fa-fire"></i> ` + (dish.calories || 0) + ` kcal</span>
                 </div>
                 <h3 class="dish-title">
-                  <a href="product.html?id=` + dish.id + `" style="color:inherit;">` + dish.title + `</a>
+                  <a href="product.html?id=` + dish.id + `" style="color:inherit;">` + (dish.titleEn || dish.title) + `</a>
                 </h3>
-                <p class="dish-desc">` + dish.desc + `</p>
+                <p class="dish-desc">` + (dish.descEn || dish.desc) + `</p>
                 <div class="dish-footer" style="padding-top:14px; border-top:1px solid var(--border-light); display:flex; justify-content:space-between; align-items:center;">
                   <a href="product.html?id=` + dish.id + `" class="btn btn-outline btn-sm">
                     <i class="fa-solid fa-eye"></i> View Dish
                   </a>
-                  <button class="btn btn-primary btn-sm" onclick="quickAddToBookingEN('` + dish.title.replace(/'/g, "\'") + `')">
+                  <button class="btn btn-primary btn-sm" onclick="quickAddToBookingEN('` + (dish.titleEn || dish.title).replace(/'/g, "\\'") + `')">
                     <i class="fa-solid fa-plus"></i> Add to Table
                   </button>
                 </div>

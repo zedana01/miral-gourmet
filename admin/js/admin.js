@@ -1,5 +1,5 @@
 /**
- * Miral Gourmet - Admin Control Panel Logic
+ * Miral Gourmet - Admin Control Panel Logic (Bilingual Arabic & English)
  */
 
 let appData = null;
@@ -50,7 +50,7 @@ function initAdminData() {
   } catch(e) {
     console.error(e);
   }
-  if (!appData || !appData.dishes || appData.version !== 3) {
+  if (!appData || !appData.dishes || (appData.version || 0) < 4) {
     appData = DEFAULT_MIRAL_DATA;
     localStorage.setItem('miral_data', JSON.stringify(appData));
   }
@@ -84,19 +84,39 @@ function switchTab(tabId, el) {
 
   const titles = {
     'tabOverview': 'لوحة الإحصائيات العامة',
-    'tabDishes': 'إدارة قائمة الطعام والأطباق',
-    'tabCategories': 'إدارة أقسام المنيو والتصنيفات',
+    'tabDishes': 'إدارة قائمة الطعام والأطباق (عربي / English)',
+    'tabCategories': 'إدارة أقسام المنيو والتصنيفات (عربي / English)',
     'tabPageHome': 'تعديل محتوى الصفحة الرئيسية (Home)',
     'tabPageAbout': 'تعديل قصة ميرال (عن ميرال - About Us)',
     'tabPageMenu': 'تعديل صفحة قائمة الطعام (Menu)',
     'tabPageReservation': 'تعديل صفحة حجز طاولة وولائم (Reservation)',
     'tabPageContact': 'تعديل صفحة اتصل بنا والفروع (Contact Us)',
     'tabBookings': 'سجل الحجوزات والطلبات',
-    'tabSettings': 'بيانات المطعم والتواصل',
+    'tabSettings': 'بيانات المطعم والتواصل العامة (عربي / English)',
     'tabBackup': 'النسخ الاحتياطي واستعادة البيانات'
   };
   const topTitle = document.getElementById('topbarTitle');
   if (topTitle && titles[tabId]) topTitle.innerText = titles[tabId];
+}
+
+// Page Language Switcher (AR / EN)
+function switchPageLang(pageKey, lang, btn) {
+  const parent = btn.closest('.card-panel');
+  if (!parent) return;
+  parent.querySelectorAll('.lang-btn').forEach(b => b.classList.remove('active'));
+  btn.classList.add('active');
+
+  const arBox = document.getElementById(pageKey + 'FieldsAr');
+  const enBox = document.getElementById(pageKey + 'FieldsEn');
+  if (arBox && enBox) {
+    if (lang === 'ar') {
+      arBox.style.display = 'grid';
+      enBox.style.display = 'none';
+    } else {
+      arBox.style.display = 'none';
+      enBox.style.display = 'grid';
+    }
+  }
 }
 
 // 1. Metrics
@@ -124,15 +144,16 @@ function renderDishesTable() {
         </td>
         <td>
           <strong>${dish.title}</strong>
+          ${dish.titleEn ? `<div style="font-size:12.5px; color:var(--admin-gold); direction:ltr; text-align:right; font-weight:600;">${dish.titleEn}</div>` : ''}
           <div style="font-size:12px; color:var(--text-muted);">${dish.desc ? dish.desc.substring(0, 45) + '...' : ''}</div>
         </td>
         <td><span class="badge-tag">${dish.category}</span></td>
         <td><strong style="color:var(--admin-gold);">${dish.price} ر.س</strong></td>
-        <td>${dish.calories} سعرة</td>
+        <td>${dish.calories || 0} سعرة</td>
         <td>${dish.isSignature ? '<span style="color:#10b981; font-weight:800;"><i class="fa-solid fa-star"></i> طبق توقيع</span>' : '<span style="color:var(--text-dim);">عادي</span>'}</td>
         <td>
           <div style="display:flex; gap:8px;">
-            <a href="../product.html?id=${dish.id}" target="_blank" class="btn btn-outline btn-sm" style="color:var(--admin-gold);"><i class="fa-solid fa-arrow-up-right-from-square"></i> عرض</a>
+            <a href="../product.html?id=${dish.id}" target="_blank" class="btn btn-outline btn-sm" style="color:var(--admin-gold);"><i class="fa-solid fa-eye"></i> عرض</a>
             <button class="btn btn-outline btn-sm" onclick="editDish('${dish.id}')"><i class="fa-solid fa-pen"></i> تعديل</button>
             <button class="btn btn-danger btn-sm" onclick="deleteDish('${dish.id}')"><i class="fa-solid fa-trash"></i> حذف</button>
           </div>
@@ -144,9 +165,12 @@ function renderDishesTable() {
 }
 
 function openAddDishModal() {
-  document.getElementById('dishModalTitle').innerText = 'إضافة طبق جديد للمنيو';
+  document.getElementById('dishModalTitle').innerText = 'إضافة طبق جديد للمنيو (AR / EN)';
   document.getElementById('dishForm').reset();
   document.getElementById('dishIdInput').value = '';
+  document.getElementById('dishTitleEnInput').value = '';
+  document.getElementById('dishBadgeEnInput').value = '';
+  document.getElementById('dishDescEnInput').value = '';
   document.getElementById('dishPreviewImg').src = 'https://images.unsplash.com/photo-1544025162-d76694265947?auto=format&fit=crop&w=600&q=80';
   populateCategorySelect();
   document.getElementById('dishModal').classList.add('show');
@@ -155,7 +179,7 @@ function openAddDishModal() {
 function populateCategorySelect() {
   const sel = document.getElementById('dishCategoryInput');
   if (!sel) return;
-  sel.innerHTML = (appData.categories || []).map(c => `<option value="${c.slug}">${c.name} (${c.slug})</option>`).join('');
+  sel.innerHTML = (appData.categories || []).map(c => `<option value="${c.slug}">${c.name} / ${c.nameEn || c.slug} (${c.slug})</option>`).join('');
 }
 
 function editDish(id) {
@@ -164,12 +188,15 @@ function editDish(id) {
   populateCategorySelect();
   document.getElementById('dishModalTitle').innerText = 'تعديل طبق: ' + dish.title;
   document.getElementById('dishIdInput').value = dish.id;
-  document.getElementById('dishTitleInput').value = dish.title;
-  document.getElementById('dishPriceInput').value = dish.price;
+  document.getElementById('dishTitleInput').value = dish.title || '';
+  document.getElementById('dishTitleEnInput').value = dish.titleEn || '';
+  document.getElementById('dishPriceInput').value = dish.price || 0;
   document.getElementById('dishCategoryInput').value = dish.category;
   document.getElementById('dishCalInput').value = dish.calories || 0;
   document.getElementById('dishBadgeInput').value = dish.badge || '';
+  document.getElementById('dishBadgeEnInput').value = dish.badgeEn || '';
   document.getElementById('dishDescInput').value = dish.desc || '';
+  document.getElementById('dishDescEnInput').value = dish.descEn || '';
   document.getElementById('dishImageInput').value = dish.image || '';
   document.getElementById('dishSignatureInput').checked = !!dish.isSignature;
   document.getElementById('dishPreviewImg').src = dish.image || '';
@@ -180,28 +207,61 @@ function saveDish(event) {
   event.preventDefault();
   const id = document.getElementById('dishIdInput').value;
   const title = document.getElementById('dishTitleInput').value.trim();
+  const titleEn = document.getElementById('dishTitleEnInput').value.trim();
   const price = parseFloat(document.getElementById('dishPriceInput').value) || 0;
   const category = document.getElementById('dishCategoryInput').value;
   const calories = parseInt(document.getElementById('dishCalInput').value) || 0;
   const badge = document.getElementById('dishBadgeInput').value.trim();
+  const badgeEn = document.getElementById('dishBadgeEnInput').value.trim();
   const desc = document.getElementById('dishDescInput').value.trim();
+  const descEn = document.getElementById('dishDescEnInput').value.trim();
   const image = document.getElementById('dishImageInput').value.trim() || 'https://images.unsplash.com/photo-1544025162-d76694265947?auto=format&fit=crop&w=600&q=80';
   const isSignature = document.getElementById('dishSignatureInput').checked;
 
   if (id) {
     const idx = appData.dishes.findIndex(d => d.id === id);
     if (idx !== -1) {
-      appData.dishes[idx] = { ...appData.dishes[idx], title, price, category, calories, badge, desc, image, isSignature };
+      appData.dishes[idx] = {
+        ...appData.dishes[idx],
+        title,
+        titleEn,
+        price,
+        category,
+        calories,
+        badge,
+        badgeEn,
+        desc,
+        descEn,
+        image,
+        isSignature,
+        tags: [badge || 'أصيل'],
+        tagsEn: [badgeEn || 'Signature']
+      };
     }
   } else {
     const newId = 'dish-' + Date.now();
-    appData.dishes.unshift({ id: newId, title, price, category, calories, badge, desc, image, isSignature, tags: [badge || 'أصيل'] });
+    appData.dishes.unshift({
+      id: newId,
+      title,
+      titleEn,
+      price,
+      category,
+      calories,
+      badge,
+      badgeEn,
+      desc,
+      descEn,
+      image,
+      isSignature,
+      tags: [badge || 'أصيل'],
+      tagsEn: [badgeEn || 'Signature']
+    });
   }
 
   saveAppData();
   renderDishesTable();
   closeDishModal();
-  showToast('تم حفظ بيانات الطبق بنجاح!');
+  showToast('تم حفظ بيانات الطبق باللغتين بنجاح!');
 }
 
 function deleteDish(id) {
@@ -227,11 +287,15 @@ function renderCategoriesTable() {
     html += `
       <tr>
         <td><strong>${cat.name}</strong></td>
+        <td><strong style="color:var(--admin-gold); direction:ltr; display:inline-block;">${cat.nameEn || cat.name}</strong></td>
         <td><code>${cat.slug}</code></td>
-        <td><span class="badge-tag">${cat.badge || '-'}</span></td>
+        <td>
+          <div>${cat.badge || '-'}</div>
+          ${cat.badgeEn ? `<div style="font-size:12px; color:var(--text-muted); direction:ltr;">${cat.badgeEn}</div>` : ''}
+        </td>
         <td>
           <div style="display:flex; gap:8px;">
-            <a href="../category.html?cat=${cat.slug}" target="_blank" class="btn btn-outline btn-sm" style="color:var(--admin-gold);"><i class="fa-solid fa-arrow-up-right-from-square"></i> عرض</a>
+            <a href="../category.html?cat=${cat.slug}" target="_blank" class="btn btn-outline btn-sm" style="color:var(--admin-gold);"><i class="fa-solid fa-eye"></i> عرض</a>
             <button class="btn btn-outline btn-sm" onclick="editCategory('${cat.id || cat.slug}')"><i class="fa-solid fa-pen"></i> تعديل</button>
             ${!isProtected ? `<button class="btn btn-danger btn-sm" onclick="deleteCategory('${cat.id || cat.slug}')"><i class="fa-solid fa-trash"></i> حذف</button>` : '<span style="color:var(--text-dim); font-size:12px;">(رئيسي)</span>'}
           </div>
@@ -243,9 +307,11 @@ function renderCategoriesTable() {
 }
 
 function openAddCategoryModal() {
-  document.getElementById('categoryModalTitle').innerText = 'إضافة قسم جديد للمنيو';
+  document.getElementById('categoryModalTitle').innerText = 'إضافة قسم جديد للمنيو (AR / EN)';
   document.getElementById('categoryForm').reset();
   document.getElementById('catIdInput').value = '';
+  document.getElementById('catNameEnInput').value = '';
+  document.getElementById('catBadgeEnInput').value = '';
   document.getElementById('categoryModal').classList.add('show');
 }
 
@@ -254,9 +320,11 @@ function editCategory(id) {
   if (!cat) return;
   document.getElementById('categoryModalTitle').innerText = 'تعديل قسم: ' + cat.name;
   document.getElementById('catIdInput').value = cat.id || cat.slug;
-  document.getElementById('catNameInput').value = cat.name;
-  document.getElementById('catSlugInput').value = cat.slug;
+  document.getElementById('catNameInput').value = cat.name || '';
+  document.getElementById('catNameEnInput').value = cat.nameEn || '';
+  document.getElementById('catSlugInput').value = cat.slug || '';
   document.getElementById('catBadgeInput').value = cat.badge || '';
+  document.getElementById('catBadgeEnInput').value = cat.badgeEn || '';
   document.getElementById('categoryModal').classList.add('show');
 }
 
@@ -264,22 +332,24 @@ function saveCategory(event) {
   event.preventDefault();
   const id = document.getElementById('catIdInput').value;
   const name = document.getElementById('catNameInput').value.trim();
+  const nameEn = document.getElementById('catNameEnInput').value.trim();
   const slug = document.getElementById('catSlugInput').value.trim().toLowerCase();
   const badge = document.getElementById('catBadgeInput').value.trim();
+  const badgeEn = document.getElementById('catBadgeEnInput').value.trim();
 
   if (id) {
     const idx = appData.categories.findIndex(c => c.id === id || c.slug === id);
     if (idx !== -1) {
-      appData.categories[idx] = { ...appData.categories[idx], name, slug, badge };
+      appData.categories[idx] = { ...appData.categories[idx], name, nameEn, slug, badge, badgeEn };
     }
   } else {
-    appData.categories.push({ id: slug, name, slug, badge });
+    appData.categories.push({ id: slug, name, nameEn, slug, badge, badgeEn });
   }
 
   saveAppData();
   renderCategoriesTable();
   closeCategoryModal();
-  showToast('تم حفظ القسم بنجاح!');
+  showToast('تم حفظ القسم باللغتين بنجاح!');
 }
 
 function deleteCategory(id) {
@@ -299,7 +369,7 @@ function closeCategoryModal() {
 function populateAllPageEditors() {
   const p = appData.pages || {};
 
-  // Home
+  // Home (AR)
   if (p.home) {
     setVal('homeHeroBadge', p.home.heroBadge);
     setVal('homeHeroTitle', p.home.heroTitle);
@@ -314,8 +384,19 @@ function populateAllPageEditors() {
     setVal('homeQuoteText', p.home.quoteText);
     setVal('homeChefName', p.home.chefName);
   }
+  // Home (EN)
+  if (p.homeEn) {
+    setVal('homeHeroBadgeEn', p.homeEn.heroBadge);
+    setVal('homeHeroTitleEn', p.homeEn.heroTitle);
+    setVal('homeHeroDescEn', p.homeEn.heroDesc);
+    setVal('homeStoryTitleEn', p.homeEn.storyTitle);
+    setVal('homeStoryP1En', p.homeEn.storyP1);
+    setVal('homeStoryP2En', p.homeEn.storyP2);
+    setVal('homeQuoteTextEn', p.homeEn.quoteText);
+    setVal('homeChefNameEn', p.homeEn.chefName);
+  }
 
-  // About
+  // About (AR)
   if (p.about) {
     setVal('aboutPageTitle', p.about.pageTitle);
     setVal('aboutPageSubtitle', p.about.pageSubtitle);
@@ -327,27 +408,51 @@ function populateAllPageEditors() {
     setVal('aboutChefQuote', p.about.chefQuote);
     setVal('aboutChefName', p.about.chefName);
   }
+  // About (EN)
+  if (p.aboutEn) {
+    setVal('aboutPageTitleEn', p.aboutEn.pageTitle);
+    setVal('aboutPageSubtitleEn', p.aboutEn.pageSubtitle);
+    setVal('aboutStoryHeadlineEn', p.aboutEn.storyHeadline);
+    setVal('aboutP1En', p.aboutEn.p1);
+    setVal('aboutP2En', p.aboutEn.p2);
+    setVal('aboutChefQuoteEn', p.aboutEn.chefQuote);
+    setVal('aboutChefNameEn', p.aboutEn.chefName);
+  }
 
-  // Menu
+  // Menu (AR & EN)
   if (p.menu) {
     setVal('menuPageTitle', p.menu.pageTitle);
     setVal('menuPageSubtitle', p.menu.pageSubtitle);
   }
+  if (p.menuEn) {
+    setVal('menuPageTitleEn', p.menuEn.pageTitle);
+    setVal('menuPageSubtitleEn', p.menuEn.pageSubtitle);
+  }
 
-  // Reservation
+  // Reservation (AR & EN)
   if (p.reservation) {
     setVal('resPageTitle', p.reservation.pageTitle);
     setVal('resPageSubtitle', p.reservation.pageSubtitle);
     setVal('resWhatsapp', p.reservation.whatsappPhone);
   }
+  if (p.reservationEn) {
+    setVal('resPageTitleEn', p.reservationEn.pageTitle);
+    setVal('resPageSubtitleEn', p.reservationEn.pageSubtitle);
+  }
 
-  // Contact
+  // Contact (AR & EN)
   if (p.contact) {
     setVal('contactPageTitle', p.contact.pageTitle);
     setVal('contactPageSubtitle', p.contact.pageSubtitle);
     setVal('contactAddress', p.contact.address);
     setVal('contactPhone', p.contact.phone);
     setVal('contactHours', p.contact.hours);
+  }
+  if (p.contactEn) {
+    setVal('contactPageTitleEn', p.contactEn.pageTitle);
+    setVal('contactPageSubtitleEn', p.contactEn.pageSubtitle);
+    setVal('contactAddressEn', p.contactEn.address);
+    setVal('contactHoursEn', p.contactEn.hours);
   }
 }
 
@@ -377,6 +482,18 @@ function savePageData(pageKey) {
       quoteText: document.getElementById('homeQuoteText').value,
       chefName: document.getElementById('homeChefName').value
     };
+    appData.pages.homeEn = {
+      heroBadge: document.getElementById('homeHeroBadgeEn').value,
+      heroTitle: document.getElementById('homeHeroTitleEn').value,
+      heroDesc: document.getElementById('homeHeroDescEn').value,
+      heroImage: document.getElementById('homeHeroImage').value,
+      storyTitle: document.getElementById('homeStoryTitleEn').value,
+      storyP1: document.getElementById('homeStoryP1En').value,
+      storyP2: document.getElementById('homeStoryP2En').value,
+      storyImage: document.getElementById('homeStoryImage').value,
+      quoteText: document.getElementById('homeQuoteTextEn').value,
+      chefName: document.getElementById('homeChefNameEn').value
+    };
   } else if (pageKey === 'about') {
     appData.pages.about = {
       pageTitle: document.getElementById('aboutPageTitle').value,
@@ -388,29 +505,57 @@ function savePageData(pageKey) {
       chefQuote: document.getElementById('aboutChefQuote').value,
       chefName: document.getElementById('aboutChefName').value
     };
+    appData.pages.aboutEn = {
+      pageTitle: document.getElementById('aboutPageTitleEn').value,
+      pageSubtitle: document.getElementById('aboutPageSubtitleEn').value,
+      storyHeadline: document.getElementById('aboutStoryHeadlineEn').value,
+      p1: document.getElementById('aboutP1En').value,
+      p2: document.getElementById('aboutP2En').value,
+      storyImage: document.getElementById('aboutStoryImage').value,
+      chefQuote: document.getElementById('aboutChefQuoteEn').value,
+      chefName: document.getElementById('aboutChefNameEn').value
+    };
   } else if (pageKey === 'menu') {
     appData.pages.menu = {
       pageTitle: document.getElementById('menuPageTitle').value,
       pageSubtitle: document.getElementById('menuPageSubtitle').value
     };
+    appData.pages.menuEn = {
+      pageTitle: document.getElementById('menuPageTitleEn').value,
+      pageSubtitle: document.getElementById('menuPageSubtitleEn').value
+    };
   } else if (pageKey === 'reservation') {
+    const resWhatsapp = document.getElementById('resWhatsapp').value;
     appData.pages.reservation = {
       pageTitle: document.getElementById('resPageTitle').value,
       pageSubtitle: document.getElementById('resPageSubtitle').value,
-      whatsappPhone: document.getElementById('resWhatsapp').value
+      whatsappPhone: resWhatsapp
+    };
+    appData.pages.reservationEn = {
+      pageTitle: document.getElementById('resPageTitleEn').value,
+      pageSubtitle: document.getElementById('resPageSubtitleEn').value,
+      whatsappPhone: resWhatsapp
     };
   } else if (pageKey === 'contact') {
+    const contactPhone = document.getElementById('contactPhone').value;
     appData.pages.contact = {
       pageTitle: document.getElementById('contactPageTitle').value,
       pageSubtitle: document.getElementById('contactPageSubtitle').value,
       address: document.getElementById('contactAddress').value,
-      phone: document.getElementById('contactPhone').value,
+      phone: contactPhone,
       hours: document.getElementById('contactHours').value
+    };
+    appData.pages.contactEn = {
+      pageTitle: document.getElementById('contactPageTitleEn').value,
+      pageSubtitle: document.getElementById('contactPageSubtitleEn').value,
+      address: document.getElementById('contactAddressEn').value,
+      phone: contactPhone,
+      hours: document.getElementById('contactHoursEn').value
     };
   }
 
   saveAppData();
-  showToast('تم حفظ تعديلات صفحة (' + pageKey + ') بنجاح وربطها بالموقع!');
+  showToast('تم حفظ تعديلات صفحة (' + pageKey + ') باللغتين العربية والإنجليزية بنجاح!');
 }
 
 function resetPageData(pageKey) {
@@ -471,10 +616,13 @@ function deleteBooking(id) {
 function populateSettings() {
   const s = appData.settings || {};
   setVal('setRestName', s.restaurantName);
+  setVal('setRestNameEn', s.restaurantNameEn);
   setVal('setPhone', s.phone);
   setVal('setWhatsapp', s.whatsapp);
   setVal('setAddress', s.address);
+  setVal('setAddressEn', s.addressEn);
   setVal('setHours', s.hours);
+  setVal('setHoursEn', s.hoursEn);
   setVal('setEmail', s.email);
 }
 
@@ -482,14 +630,17 @@ function saveSettings(event) {
   event.preventDefault();
   appData.settings = {
     restaurantName: document.getElementById('setRestName').value,
+    restaurantNameEn: document.getElementById('setRestNameEn').value,
     phone: document.getElementById('setPhone').value,
     whatsapp: document.getElementById('setWhatsapp').value,
     address: document.getElementById('setAddress').value,
+    addressEn: document.getElementById('setAddressEn').value,
     hours: document.getElementById('setHours').value,
+    hoursEn: document.getElementById('setHoursEn').value,
     email: document.getElementById('setEmail').value
   };
   saveAppData();
-  showToast('تم حفظ إعدادات وبيانات المطعم بنجاح!');
+  showToast('تم حفظ إعدادات وبيانات المطعم باللغتين العربية والإنجليزية!');
 }
 
 // 7. Image Upload Handler

@@ -299,11 +299,11 @@
       currentDish = (data.dishes || []).find(function(d) { return d.id === dishId; }) || (data.dishes && data.dishes[0]);
       if (!currentDish) return;
 
-      document.title = currentDish.title + ' | Miral Gourmet';
-      document.getElementById('prodBreadcrumbTitle').innerText = currentDish.title;
-      document.getElementById('prodTitle').innerText = currentDish.title;
+      document.title = (currentDish.titleEn || currentDish.title) + ' | Miral Gourmet';
+      document.getElementById('prodBreadcrumbTitle').innerText = currentDish.titleEn || currentDish.title;
+      document.getElementById('prodTitle').innerText = currentDish.titleEn || currentDish.title;
       document.getElementById('prodPrice').innerText = currentDish.price + ' SAR';
-      document.getElementById('prodDesc').innerText = currentDish.desc;
+      document.getElementById('prodDesc').innerText = currentDish.descEn || currentDish.desc;
       document.getElementById('prodCalories').innerText = (currentDish.calories || 0) + ' kcal';
       document.getElementById('prodImage').src = currentDish.image;
       document.getElementById('prodBadge').innerText = currentDish.badge || "Chef's Choice";
