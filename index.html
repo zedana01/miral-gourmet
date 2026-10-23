@@ -1,0 +1,687 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>مطعم ميرال جورميه | فن الطهي العصري بروح الضيافة الأندلسية والمتوسطية بالرياض</title>
+  <meta name="description" content="مطعم ميرال جورميه بالرياض، تجربة طهي راقية تجمع أطايب البحر الأبيض المتوسط مع فخامة الضيافة السعودية. لحوم معتقة، أطباق توقيع وتراس حديقة مشرق.">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+  <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+
+  
+  <!-- Top Utility Bar -->
+  <div class="top-bar">
+    <div class="container top-bar-inner">
+      <div class="top-info">
+        <span class="top-info-item"><i class="fa-solid fa-location-dot"></i> <span class="sync-address">الرياض، طريق الأمير محمد بن عبد العزيز (التحلية)</span></span>
+        <span class="top-info-item"><i class="fa-regular fa-clock"></i> <span class="sync-hours">يومياً: 12:30 ظهراً - 1:30 بعد منتصف الليل</span></span>
+        <span class="top-info-item"><i class="fa-solid fa-phone"></i> <a href="tel:+966114808899" class="sync-phone">+966 11 480 8899</a></span>
+      </div>
+      <div class="top-actions">
+        <span class="vip-badge"><i class="fa-solid fa-crown"></i> خدمة كبار الشخصيات متاحة</span>
+        <a href="reservation.html" class="instant-book-link"><i class="fa-regular fa-calendar-check text-gold"></i> حجز فوري</a>
+      </div>
+    </div>
+  </div>
+
+  <!-- Main Navigation Header -->
+  <header class="main-header">
+    <div class="container nav-container">
+      <a href="index.html" class="brand-logo">
+        <div class="brand-icon"><i class="fa-solid fa-utensils"></i></div>
+        <div class="brand-text">
+          <h1>ميرال جورميه</h1>
+          <span>MIRAL GOURMET • RIYADH</span>
+        </div>
+      </a>
+
+      <nav class="nav-menu" id="navMenu">
+        <a href="index.html" class="nav-link active">الرئيسية</a>
+        <a href="about.html" class="nav-link ">عن ميرال</a>
+        <a href="index.html#signatures" class="nav-link">أطباق التوقيع</a>
+        <a href="menu.html" class="nav-link ">قائمة الطعام</a>
+        <a href="index.html#terrace" class="nav-link">التراس والحديقة</a>
+        <a href="index.html#reviews" class="nav-link">آراء الضيوف</a>
+        <a href="contact.html" class="nav-link ">تواصل معنا</a>
+      </nav>
+
+      <div class="header-actions">
+        <a href="reservation.html" class="btn btn-primary btn-sm"><i class="fa-solid fa-chair"></i> احجز طاولتك</a>
+        <button class="mobile-toggle" onclick="toggleMobileMenu()" aria-label="القائمة">
+          <i class="fa-solid fa-bars"></i>
+        </button>
+      </div>
+    </div>
+  </header>
+
+
+  <!-- Hero Section -->
+  <section class="hero-section" id="heroSection" style="background-image: url('https://images.unsplash.com/photo-1517248135467-4c7edcad34c4?auto=format&fit=crop&w=1920&q=85');">
+    <div class="hero-overlay"></div>
+    <div class="container hero-content">
+      <div class="hero-badge">
+        <i class="fa-solid fa-award"></i>
+        <span>التميز في الضيافة الراقية 2026</span>
+      </div>
+      <h2 class="hero-title" id="heroTitle">فن الطهي العصري بروح الضيافة الأندلسية والمتوسطية</h2>
+      <p class="hero-desc" id="heroDesc">
+        نأخذكم في رحلة ذوقية حصرية تلتقي فيها أجود المكونات العضوية الطازجة مع لمسات الشيف المبتكرة في أجواء مضيئة وفاتنة تأسر الحواس.
+      </p>
+      <div class="hero-btns">
+        <a href="#booking" class="btn btn-primary"><i class="fa-solid fa-chair"></i> احجز طاولتك الآن</a>
+        <a href="menu.html" class="btn btn-white"><i class="fa-solid fa-utensils"></i> استكشف قائمة الطعام</a>
+      </div>
+
+      <!-- Hero Indicators -->
+      <div class="hero-indicators">
+        <div class="indicator-card active">
+          <div class="indicator-num">01</div>
+          <div class="indicator-text">
+            <strong>الصالة الملكية</strong>
+            <span>فن الطهي والضيافة</span>
+          </div>
+        </div>
+        <div class="indicator-card">
+          <div class="indicator-num">02</div>
+          <div class="indicator-text">
+            <strong>الصالونات الدافئة</strong>
+            <span>أجواء وخصوصية تامة</span>
+          </div>
+        </div>
+        <div class="indicator-card">
+          <div class="indicator-num">03</div>
+          <div class="indicator-text">
+            <strong>أطباق التوقيع</strong>
+            <span>واغيو وحطب الزيتون</span>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Quick Booking Ribbon Bar -->
+  <div class="container quick-booking-bar">
+    <div class="booking-bar-card">
+      <form class="booking-bar-form" onsubmit="event.preventDefault(); window.location.href='reservation.html';">
+        <div class="form-group-bar">
+          <label><i class="fa-regular fa-calendar"></i> تاريخ الزيارة</label>
+          <input type="date" class="form-control-bar" value="2026-10-25">
+        </div>
+        <div class="form-group-bar">
+          <label><i class="fa-regular fa-clock"></i> وقت الحجز</label>
+          <select class="form-control-bar">
+            <option>01:00 ظهراً (غداء)</option>
+            <option>03:30 عصراً</option>
+            <option>07:30 مساءً (عشاء مبكر)</option>
+            <option selected>09:30 مساءً (عشاء رئيسي)</option>
+            <option>11:30 ليلاً (سهرة ميرال)</option>
+          </select>
+        </div>
+        <div class="form-group-bar">
+          <label><i class="fa-solid fa-users"></i> عدد الضيوف</label>
+          <select class="form-control-bar">
+            <option>شخصان (طاولة ثنائية)</option>
+            <option selected>3 إلى 4 أشخاص</option>
+            <option>5 إلى 6 أشخاص (عائلية)</option>
+            <option>7 إلى 10 أشخاص (مجموعة)</option>
+            <option>صالون خاص VIP (12+)</option>
+          </select>
+        </div>
+        <div class="form-group-bar">
+          <label><i class="fa-solid fa-couch"></i> نوع الجلسة</label>
+          <select class="form-control-bar">
+            <option selected>التراس الخارجي المفتوح</option>
+            <option>الصالة الرئيسية المضيئة</option>
+            <option>صالون VIP ملكي مغلق</option>
+          </select>
+        </div>
+        <button type="submit" class="btn btn-primary" style="height:48px;">
+          <i class="fa-solid fa-magnifying-glass"></i> تحقق من التوفر
+        </button>
+      </form>
+    </div>
+  </div>
+
+  <!-- 4 Core Pillars -->
+  <section class="pillars-section">
+    <div class="container">
+      <div class="pillars-grid">
+        <div class="pillar-card">
+          <div class="pillar-icon-box"><i class="fa-solid fa-seedling"></i></div>
+          <h3>مكونات عضوية 100%</h3>
+          <p>نعتمد مبدأ المزرعة إلى المائدة، حيث تُحصد الخضروات والأعشاب يومياً من مزارعنا الشريكة المعتمدة لضمان النضارة المطلقة.</p>
+        </div>
+        <div class="pillar-card">
+          <div class="pillar-icon-box"><i class="fa-solid fa-hat-chef"></i></div>
+          <h3>طهاة عالميون متمرسون</h3>
+          <p>يقود مطبخ ميرال شيف تنفيذي بخبرة عالمية حائزة على جوائز دولية، يمزج شغف البحر الأبيض المتوسط مع الفخامة السعودية.</p>
+        </div>
+        <div class="pillar-card">
+          <div class="pillar-icon-box"><i class="fa-solid fa-sun-plant-wilt"></i></div>
+          <h3>تراس حديقة مشرق ومفتوح</h3>
+          <p>تصميم معماري مستوحى من واحات الرياض العصرية، يمنحك ضوءاً طبيعياً دافئاً نهاراً وأجواء رومانسية ساحرة تحت النجوم ليلاً.</p>
+        </div>
+        <div class="pillar-card">
+          <div class="pillar-icon-box"><i class="fa-solid fa-gem"></i></div>
+          <h3>أجنحة ضيافة VIP خاصة</h3>
+          <p>صالونات مغلقة فاخرة لرجال الأعمال والعائلات يبحثون عن الخصوصية التامة مع خدمة نادل خاص وقائمة تذوق مصممة خصيصاً.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Story / About Section -->
+  <section class="story-section" id="about">
+    <div class="container">
+      <div class="story-grid">
+        <!-- Visuals Column -->
+        <div class="story-images">
+          <img src="https://images.unsplash.com/photo-1555396273-367ea4eb4db5?auto=format&fit=crop&w=800&q=80" alt="ميرال جورميه" class="story-img-main" id="storyImage">
+          <div class="story-img-badge">
+            <div class="badge-icon"><i class="fa-solid fa-award"></i></div>
+            <div class="badge-text">
+              <strong>15+</strong>
+              <span>عاماً من الريادة في الضيافة الراقية</span>
+            </div>
+          </div>
+        </div>
+
+        <!-- Content Column -->
+        <div class="story-content">
+          <span class="section-tag"><i class="fa-solid fa-feather"></i> قصة ميرال جورميه</span>
+          <h2 id="storyTitle">حيث يتجلى شغف الطهي في لوحة بيضاء ناصعة الجمال</h2>
+          <p class="story-text" id="storyP1">
+            انطلق مطعم «ميرال» من رؤية جريئة تهدف إلى إعادة تعريف مفهوم المطاعم الفاخرة في قلب الرياض: كسر القوالب المظلمة وابتكار بيئة بيضاء مشرقة تشع بالحياة والجمال.
+          </p>
+          <p class="story-text" id="storyP2">
+            نحن نؤمن بأن كل طبق يقدم على مائدة ميرال هو عمل فني متكامل؛ تبدأ الرحلة من اختيار الحبوب والزيوت المعصورة على البارد، مروراً بالأسماك الطازجة المصطادة يومياً من مياه البحر الأحمر، وحتى تقنيات الطهي البطيء التي تمنح الأطباق نكهات عميقة لا تُنسى.
+          </p>
+
+          <!-- Quote -->
+          <div class="story-quote-card">
+            <p>"إن الطهي ليس مجرد وصفات تُطبّق، بل هو حوار صامت بين روح الشيف وحواس الضيف. في ميرال نسعى لأن تكون كل لقمة ذكرى خالدة."</p>
+            <div class="chef-info">
+              <span class="chef-name">الشيف فابريزيو لوران</span>
+              <span class="chef-title">• رئيس الطهاة التنفيذي بميرال</span>
+            </div>
+          </div>
+
+          <!-- Stats -->
+          <div class="stats-row">
+            <div class="stat-item">
+              <strong>48+</strong>
+              <span>طبق حصري مبتكر</span>
+            </div>
+            <div class="stat-item">
+              <strong>120K</strong>
+              <span>ضيف سعيد سنوياً</span>
+            </div>
+            <div class="stat-item">
+              <strong>99.4%</strong>
+              <span>معدل رضا الضيوف</span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Signature Dishes Section -->
+  <section class="signatures-section" id="signatures">
+    <div class="container">
+      <div class="text-center">
+        <span class="section-tag"><i class="fa-solid fa-star"></i> أطباق التوقيع الحصرية</span>
+        <h2 class="section-title">إبداعات الشيف المختارة بعناية لأصحاب الذوق الرفيع</h2>
+        <p class="section-desc">ستة أطباق استثنائية صُممت لتمثل هوية مطعم ميرال في توازن النكهات ورقي التقديم</p>
+      </div>
+
+      <div class="signatures-grid" id="signaturesGrid">
+        <!-- Loaded dynamically via miral-sync.js -->
+      </div>
+    </div>
+  </section>
+
+  <!-- Menu Section -->
+  <section class="menu-section" id="menu">
+    <div class="container">
+      <div class="text-center">
+        <span class="section-tag"><i class="fa-solid fa-book-open"></i> قائمة طعام ميرال المتكاملة</span>
+        <h2 class="section-title">سيمفونية من المذاقات الرفيعة تلبي كل الأذواق</h2>
+        <p class="section-desc">تنقل بين أقسام القائمة لاستكشاف تجارب تذوق حصرية أُعدت بعناية فائقة</p>
+      </div>
+
+      <!-- Categories Filter Tabs -->
+      <div class="menu-tabs-wrapper" id="menuTabsNav">
+        <!-- Loaded via miral-sync.js -->
+      </div>
+
+      <!-- Menu Items Grid -->
+      <div class="menu-items-grid" id="menuItemsGrid">
+        <!-- Loaded via miral-sync.js -->
+      </div>
+
+      <!-- PDF Download Banner -->
+      <div class="menu-pdf-banner">
+        <div class="menu-pdf-content">
+          <h3>هل تفضل تصفح القائمة كاملة بتنسيق PDF؟</h3>
+          <p>تحتوي القائمة الكاملة على تشكيلة القهوة المختصة، المشروبات الباردة، وقوائم التذوق الموسمية للعام 2026.</p>
+        </div>
+        <a href="menu.html" class="btn btn-primary"><i class="fa-solid fa-file-pdf"></i> استعراض القائمة كاملة</a>
+      </div>
+    </div>
+  </section>
+
+  <!-- Terrace & VIP Lounge Showcase -->
+  <section class="terrace-section" id="terrace">
+    <div class="container">
+      <div class="terrace-grid">
+        <div class="terrace-content">
+          <span class="section-tag"><i class="fa-solid fa-tree"></i> أجواء استثنائية وخصوصية مطلقة</span>
+          <h2 class="section-title">تراس الحديقة المفتوح وصالونات VIP الملكية</h2>
+          <p class="section-desc" style="margin:0 0 20px 0;">
+            سواء كنت تبحث عن فطور أو غداء مشمس في الهواء الطلق بين أصوات خرير المياه ونسيم الرياض اللطيف، أو عشاء عمل رفيع المستوى يتطلب أقصى درجات السرية والهدوء، يوفر ميرال المساحة المثالية لطلبك.
+          </p>
+
+          <div class="terrace-features-list">
+            <div class="terrace-feature-item">
+              <div class="terrace-feature-icon"><i class="fa-solid fa-cloud-sun"></i></div>
+              <div class="terrace-feature-text">
+                <strong>تراس الحديقة المفتوح:</strong>
+                <p>مجهز بنظام رذاذ وتكييف هوائي متطور صيفاً وتدفئة دافئة شتاءً لتجربة مريحة طوال أيام السنة.</p>
+              </div>
+            </div>
+            <div class="terrace-feature-item">
+              <div class="terrace-feature-icon"><i class="fa-solid fa-crown"></i></div>
+              <div class="terrace-feature-text">
+                <strong>أجنحة VIP وصالونات كبار الشخصيات:</strong>
+                <p>مداخل مستقلة، شاشات عرض تفاعلية، نادل خاص معتمد، ومصعد خاص لضمان أعلى درجات الخصوصية.</p>
+              </div>
+            </div>
+            <div class="terrace-feature-item">
+              <div class="terrace-feature-icon"><i class="fa-solid fa-champagne-glasses"></i></div>
+              <div class="terrace-feature-text">
+                <strong>خدمة تنظيم المناسبات الحصرية:</strong>
+                <p>تنسيق كامل لحفلات التخرج، أعياد الميلاد، واللقاءات الرسمية مع قوائم طعام مخصصة وتزيين راقٍ.</p>
+              </div>
+            </div>
+          </div>
+
+          <div style="display:flex; gap:14px; flex-wrap:wrap;">
+            <a href="reservation.html" class="btn btn-primary"><i class="fa-solid fa-calendar-check"></i> حجز جناح خاص أو جلسة تراس</a>
+            <a href="contact.html" class="btn btn-outline"><i class="fa-solid fa-comments"></i> تواصل مع منسق الفعاليات</a>
+          </div>
+        </div>
+
+        <div class="terrace-gallery">
+          <div class="terrace-gallery-item">
+            <img src="https://images.unsplash.com/photo-1517248135467-4c7edcad34c4?auto=format&fit=crop&w=800&q=80" alt="تراس الحديقة">
+            <div class="gallery-caption">التراس الخارجي المشرق</div>
+          </div>
+          <div class="terrace-gallery-item">
+            <img src="https://images.unsplash.com/photo-1552566626-52f8b828add9?auto=format&fit=crop&w=800&q=80" alt="صالون VIP">
+            <div class="gallery-caption">جناح VIP الملكي</div>
+          </div>
+          <div class="terrace-gallery-item">
+            <img src="https://images.unsplash.com/photo-1551024709-8f23befc6f87?auto=format&fit=crop&w=700&q=80" alt="بار الموكتيل">
+            <div class="gallery-caption">بار الموكتيل المنعش</div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Interactive Table Reservation Section -->
+  <section class="reservation-section" id="booking">
+    <div class="container">
+      <div class="text-center">
+        <span class="section-tag"><i class="fa-regular fa-calendar-check"></i> حجز فوري ومؤكد</span>
+        <h2 class="section-title">احجز مائدتك الراقية في مطعم ميرال جورميه</h2>
+        <p class="section-desc">نسعد باستضافتكم وصناعة أوقات لا تُنسى. يرجى ملء التفاصيل لتأكيد طاولتكم فوراً.</p>
+      </div>
+
+      <div class="reservation-grid">
+        <!-- Left: Perks Card -->
+        <div class="vip-perks-card">
+          <div>
+            <div class="vip-perks-header">
+              <i class="fa-solid fa-crown" style="font-size:32px; color:var(--primary-light); margin-bottom:12px;"></i>
+              <h3>مزايا ضيافة ميرال الحصرية</h3>
+              <p>نضمن لكم تجربة استثنائية من لحظة وصولكم وحتى مغادرتكم</p>
+            </div>
+            <div class="vip-perks-list">
+              <div class="vip-perk-item">
+                <i class="fa-solid fa-car-side"></i>
+                <div>
+                  <strong>خدمة صف السيارات (Valet):</strong>
+                  <span>مواقف خاصة ومجانية لضيوف الحجوزات المسبقة.</span>
+                </div>
+              </div>
+              <div class="vip-perk-item">
+                <i class="fa-solid fa-bell-concierge"></i>
+                <div>
+                  <strong>استقبال ملكي مخصص:</strong>
+                  <span>مرافقة شخصية إلى طاولتكم المحجوزة فور وصولكم دون انتظار.</span>
+                </div>
+              </div>
+              <div class="vip-perk-item">
+                <i class="fa-solid fa-cake-candles"></i>
+                <div>
+                  <strong>تجهيز المناسبات مجاناً:</strong>
+                  <span>تنسيق طاولة الاحتفال بلمسات راقية وكعكة ميرال الترحيبية.</span>
+                </div>
+              </div>
+              <div class="vip-perk-item">
+                <i class="fa-brands fa-whatsapp"></i>
+                <div>
+                  <strong>تأكيد فوري عبر واتساب:</strong>
+                  <span>إشعار رقمي برمز الحجز وموقع المطعم الدقيق.</span>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <div class="vip-call-box">
+            <span>بحاجة لترتيبات خاصة أو حجز كامل الصالة؟</span>
+            <a href="tel:+966114808899" class="sync-phone">+966 11 480 8899</a>
+          </div>
+        </div>
+
+        <!-- Right: Booking Form -->
+        <div class="booking-form-card">
+          <form onsubmit="handleBookingSubmit(event)">
+            <div class="booking-form-grid">
+              <div class="form-group">
+                <label>الاسم الكريم *</label>
+                <input type="text" name="name" class="form-control" placeholder="الاسم ثلاثي" required>
+              </div>
+              <div class="form-group">
+                <label>رقم الجوال (واتساب) *</label>
+                <input type="tel" name="phone" class="form-control" placeholder="05XXXXXXXX" required>
+              </div>
+              <div class="form-group">
+                <label>البريد الإلكتروني</label>
+                <input type="email" name="email" class="form-control" placeholder="name@domain.com">
+              </div>
+              <div class="form-group">
+                <label>عدد الضيوف *</label>
+                <select name="guests" class="form-control" required>
+                  <option value="شخصان (طاولة ثنائية)">شخصان (طاولة ثنائية)</option>
+                  <option value="4 أشخاص (عائلية)" selected>4 أشخاص (عائلية)</option>
+                  <option value="6 أشخاص">6 أشخاص</option>
+                  <option value="8 أشخاص (مجموعة)">8 أشخاص (مجموعة)</option>
+                  <option value="12 شخصاً فما فوق (صالون VIP)">12 شخصاً فما فوق (صالون VIP)</option>
+                </select>
+              </div>
+              <div class="form-group">
+                <label>تاريخ الحجز *</label>
+                <input type="date" name="date" class="form-control" value="2026-10-25" required>
+              </div>
+              <div class="form-group">
+                <label>وقت الحضور *</label>
+                <select name="time" class="form-control" required>
+                  <option>01:00 ظهراً (فترة الغداء)</option>
+                  <option>03:30 عصراً</option>
+                  <option selected>08:00 مساءً (عشاء رئيسي)</option>
+                  <option>10:00 مساءً</option>
+                  <option>11:30 ليلاً (سهرة ميرال)</option>
+                </select>
+              </div>
+              <div class="form-group">
+                <label>نوع الجلسة *</label>
+                <select name="seating" class="form-control">
+                  <option selected>تراس الحديقة المفتوح (في الهواء الطلق)</option>
+                  <option>الصالة الرئيسية المضيئة</option>
+                  <option>صالون VIP كبار الشخصيات</option>
+                </select>
+              </div>
+              <div class="form-group">
+                <label>مناسبة الزيارة</label>
+                <select name="occasion" class="form-control">
+                  <option selected>عشاء عام فاخر</option>
+                  <option>عيد ميلاد / ذكرى زواج</option>
+                  <option>عشاء عمل رسمي</option>
+                  <option>احتفال تخرج أو ترقية</option>
+                </select>
+              </div>
+              <div class="form-group form-full">
+                <label>ملاحظات أو طلبات خاصة (حساسية طعام، باقة ورد، كعكة احتفال)</label>
+                <textarea name="notes" id="bookingNotes" class="form-control" placeholder="اكتب أي رغبة خاصة هنا..."></textarea>
+              </div>
+              <div class="form-group form-full">
+                <button type="submit" class="btn btn-primary" style="width:100%; height:52px; font-size:16.5px;">
+                  <i class="fa-solid fa-calendar-check"></i> تأكيد طلب حجز الطاولة الفوري
+                </button>
+                <span style="font-size:12px; color:var(--text-muted); text-align:center; margin-top:8px; display:block;">
+                  <i class="fa-solid fa-lock"></i> حجزكم مضمون فوراً وبدون أي رسوم إلغاء مسبقة.
+                </span>
+              </div>
+            </div>
+          </form>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Guest Reviews Section -->
+  <section class="reviews-section" id="reviews">
+    <div class="container">
+      <div class="text-center">
+        <span class="section-tag"><i class="fa-solid fa-quote-right"></i> تجارب ضيوفنا الكرام</span>
+        <h2 class="section-title">ماذا يقول رواد ميرال عن زيارتهم؟</h2>
+        <p class="section-desc">نعتز بثقة نخبة ضيوفنا ونسعى دائماً لتجاوز كل التوقعات</p>
+      </div>
+
+      <div class="reviews-grid">
+        <div class="review-card">
+          <div class="review-stars">
+            <i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i>
+          </div>
+          <p class="review-text">
+            "تجربة تفوق الوصف! الديكور المشرق وتصميم التراس يجعلان المكان واحة سلام وسط صخب الرياض. طبق ريش الضأن بالعسل والزعتر كان الأفضل بلا منازع، والخدمة ملكية بكل المقاييس."
+          </p>
+          <div class="reviewer-info">
+            <div class="reviewer-avatar">س</div>
+            <div>
+              <div class="reviewer-name">سعود آل مقرن</div>
+              <div class="reviewer-title">رجل أعمال • الرياض</div>
+            </div>
+          </div>
+        </div>
+
+        <div class="review-card">
+          <div class="review-stars">
+            <i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i>
+          </div>
+          <p class="review-text">
+            "احتفلنا بذكرى زواجنا في الصالون الخاص VIP، وكان كل شيء مرتباً بدرجة مذهلة. باقة الورد، الموسيقى الهادئة، وحلى الميل فاي بالذهب كان مفاجأة ساحرة لزوجتي. شكراً لفريق ميرال المحترف."
+          </p>
+          <div class="reviewer-info">
+            <div class="reviewer-avatar">ف</div>
+            <div>
+              <div class="reviewer-name">د. فيصل الهاجري</div>
+              <div class="reviewer-title">ضيف دائم • الرياض</div>
+            </div>
+          </div>
+        </div>
+
+        <div class="review-card">
+          <div class="review-stars">
+            <i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i>
+          </div>
+          <p class="review-text">
+            "كناقدة طعام زرت مئات المطاعم حول العالم، وميرال أثبت أن المطاعم الراقية في المملكة وصلت لمستوى عالمي ينافس بقوة. تندرلوين الواغيو والبوراتا الطازجة كانا في منتهى التوازن والرقي."
+          </p>
+          <div class="reviewer-info">
+            <div class="reviewer-avatar">ن</div>
+            <div>
+              <div class="reviewer-name">نوف السبيعي</div>
+              <div class="reviewer-title">مدونة متخصصة في فنون الطهي</div>
+            </div>
+          </div>
+        </div>
+
+        <div class="review-card">
+          <div class="review-stars">
+            <i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i>
+          </div>
+          <p class="review-text">
+            "الإضاءة الطبيعية نهاراً تمنحك إحساساً رائعاً بالانتعاش. قهوة ميرال المختصة وموكتيل الذهب مع كيكة التمر الخلاص تجعل فترة العصر تجربة استرخاء لا تُضاهى. سأكرر الزيارة بالتأكيد."
+          </p>
+          <div class="reviewer-info">
+            <div class="reviewer-avatar">س</div>
+            <div>
+              <div class="reviewer-name">سارة القحطاني</div>
+              <div class="reviewer-title">مهندسة ديكور داخلي</div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Culinary Gallery Strip -->
+  <div class="gallery-strip">
+    <div class="gallery-strip-item">
+      <img src="https://images.unsplash.com/photo-1544025162-d76694265947?auto=format&fit=crop&w=600&q=80" alt="طبق ميرال">
+      <div class="gallery-strip-overlay"><i class="fa-brands fa-instagram"></i></div>
+    </div>
+    <div class="gallery-strip-item">
+      <img src="https://images.unsplash.com/photo-1551024709-8f23befc6f87?auto=format&fit=crop&w=600&q=80" alt="موكتيل ميرال">
+      <div class="gallery-strip-overlay"><i class="fa-brands fa-instagram"></i></div>
+    </div>
+    <div class="gallery-strip-item">
+      <img src="https://images.unsplash.com/photo-1558030006-450675393462?auto=format&fit=crop&w=600&q=80" alt="ستيك واغيو">
+      <div class="gallery-strip-overlay"><i class="fa-brands fa-instagram"></i></div>
+    </div>
+    <div class="gallery-strip-item">
+      <img src="https://images.unsplash.com/photo-1540420773420-3366772f4999?auto=format&fit=crop&w=600&q=80" alt="سلطة بوراتا">
+      <div class="gallery-strip-overlay"><i class="fa-brands fa-instagram"></i></div>
+    </div>
+    <div class="gallery-strip-item">
+      <img src="https://images.unsplash.com/photo-1587314168485-3236d6710814?auto=format&fit=crop&w=600&q=80" alt="حلوى ميل فاي">
+      <div class="gallery-strip-overlay"><i class="fa-brands fa-instagram"></i></div>
+    </div>
+    <div class="gallery-strip-item">
+      <img src="https://images.unsplash.com/photo-1517248135467-4c7edcad34c4?auto=format&fit=crop&w=600&q=80" alt="جلسات ميرال">
+      <div class="gallery-strip-overlay"><i class="fa-brands fa-instagram"></i></div>
+    </div>
+  </div>
+
+  
+  <!-- Main Footer -->
+  <footer class="main-footer">
+    <div class="container">
+      <div class="footer-grid">
+        <!-- Col 1: About -->
+        <div class="footer-col footer-about">
+          <div class="brand-logo" style="margin-bottom:18px;">
+            <div class="brand-icon"><i class="fa-solid fa-utensils"></i></div>
+            <div class="brand-text">
+              <h2 style="font-size:22px; color:#fff;">ميرال جورميه</h2>
+              <span style="color:var(--primary-light);">MIRAL GOURMET DINING</span>
+            </div>
+          </div>
+          <p>
+            نقدم تجربة ضيافة متوسطية وعالمية فاخرة في بيئة معمارية بيضاء ناصعة تفيض بالحياة، حيث تلتقي متعة التذوق العالي مع رقي الأجواء ودفء الاستقبال في قلب العاصمة الرياض.
+          </p>
+          <div class="footer-social">
+            <a href="#" class="social-icon-btn" aria-label="Instagram"><i class="fa-brands fa-instagram"></i></a>
+            <a href="#" class="social-icon-btn" aria-label="Snapchat"><i class="fa-brands fa-snapchat"></i></a>
+            <a href="#" class="social-icon-btn" aria-label="Twitter X"><i class="fa-brands fa-x-twitter"></i></a>
+            <a href="https://wa.me/966114808899" class="social-icon-btn" aria-label="WhatsApp"><i class="fa-brands fa-whatsapp"></i></a>
+          </div>
+        </div>
+
+        <!-- Col 2: Quick Links -->
+        <div class="footer-col">
+          <h4>روابط سريعة</h4>
+          <div class="footer-links">
+            <a href="index.html"><i class="fa-solid fa-angle-left"></i> الصفحة الرئيسية</a>
+            <a href="about.html"><i class="fa-solid fa-angle-left"></i> قصة ميرال وفلسفتنا</a>
+            <a href="index.html#signatures"><i class="fa-solid fa-angle-left"></i> أطباق التوقيع الحصرية</a>
+            <a href="menu.html"><i class="fa-solid fa-angle-left"></i> قائمة الطعام والمشروبات</a>
+            <a href="index.html#terrace"><i class="fa-solid fa-angle-left"></i> التراس وقاعات VIP</a>
+            <a href="reservation.html"><i class="fa-solid fa-angle-left"></i> حجز طاولة فورية</a>
+            <a href="admin/index.html" style="color:var(--primary-light); font-weight:800;"><i class="fa-solid fa-lock"></i> لوحة التحكم الإدارية</a>
+          </div>
+        </div>
+
+        <!-- Col 3: Hours & Location -->
+        <div class="footer-col">
+          <h4>أوقات العمل والعنوان</h4>
+          <div class="footer-contact-list">
+            <div class="contact-row">
+              <i class="fa-solid fa-map-pin"></i>
+              <span class="sync-address">الرياض، حي السليمانية، طريق التحلية، مجمع ميرال للضيافة</span>
+            </div>
+            <div class="contact-row">
+              <i class="fa-solid fa-clock"></i>
+              <div>
+                <strong>فترة الغداء:</strong> 12:30 م - 05:00 م<br>
+                <strong>فترة العشاء:</strong> 06:30 م - 01:30 ص<br>
+                <strong>خدمة التراس:</strong> مستمرة طوال اليوم
+              </div>
+            </div>
+            <div class="contact-row">
+              <i class="fa-solid fa-phone"></i>
+              <span>هاتف الحجوزات: <a href="tel:+966114808899" class="sync-phone" style="color:#dfbe87;">+966 11 480 8899</a></span>
+            </div>
+          </div>
+        </div>
+
+        <!-- Col 4: Newsletter -->
+        <div class="footer-col">
+          <h4>النشرة الذواقة الحصرية</h4>
+          <p style="font-size:13.5px; margin-bottom:14px; color:#cbd5e1;">
+            انضم إلى قائمة ضيوف الشرف لتصلك دعوات تذوق القوائم الموسمية الحصرية وعروض المناسبات الخاصة.
+          </p>
+          <form class="newsletter-form" onsubmit="event.preventDefault(); showToast('تم الاشتراك بنجاح في النشرة الذواقة!'); this.reset();">
+            <input type="email" class="newsletter-input" placeholder="بريدك الإلكتروني" required>
+            <button type="submit" class="btn btn-primary btn-sm"><i class="fa-regular fa-paper-plane"></i></button>
+          </form>
+          <span style="font-size:11.5px; color:#64748b; margin-top:8px; display:block;">
+            <i class="fa-solid fa-shield-halved"></i> خصوصيتكم محمية بالكامل ولن نرسل أي رسائل غير مرغوبة.
+          </span>
+        </div>
+      </div>
+
+      <!-- Bottom Bar -->
+      <div class="footer-bottom">
+        <div>
+          جميع الحقوق محفوظة © 2026 <strong>مطعم ميرال جورميه (Miral Gourmet)</strong>
+        </div>
+        <div class="footer-bottom-links">
+          <a href="#">سياسة الخصوصية</a>
+          <span>•</span>
+          <a href="#">الشروط والأحكام</a>
+          <span>•</span>
+          <a href="#">معايير الجودة وسلامة الغذاء</a>
+          <span>•</span>
+          <a href="admin/index.html" class="text-gold"><i class="fa-solid fa-gauge"></i> الإدارة</a>
+        </div>
+      </div>
+    </div>
+  </footer>
+
+  <!-- Booking Confirmation Modal -->
+  <div class="modal-backdrop" id="bookingConfirmationModal">
+    <div class="modal-box">
+      <div class="modal-icon"><i class="fa-solid fa-circle-check"></i></div>
+      <h3 class="modal-title">تم استلام طلب الحجز بنجاح!</h3>
+      <p class="modal-desc" id="modalBookingDesc">
+        شكراً لاختياركم مطعم ميرال جورميه. تم تأكيد بيانات حجزكم بنجاح وسيتواصل معكم فريق الاستقبال لتجهيز طاولتكم بأرقى مستوى.
+      </p>
+      <button class="btn btn-primary" onclick="closeModal()" style="width:100%;">
+        <i class="fa-solid fa-check"></i> حسناً، رائع
+      </button>
+    </div>
+  </div>
+
+  <script src="js/miral-sync.js"></script>
+  <script src="js/main.js"></script>
+
+
+</body>
+</html>

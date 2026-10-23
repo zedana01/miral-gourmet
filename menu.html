@@ -1,0 +1,229 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>قائمة طعام ميرال جورميه | تشكيلة الأطباق والمشويات والحلويات والموكتيل</title>
+  <meta name="description" content="تصفح قائمة طعام مطعم ميرال جورميه بالرياض. أطباق توقيع، ستيك واغيو، ريش ضأن، بحريات طازجة، مقبلات وحلويات فاخرة.">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+  <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+
+  
+  <!-- Top Utility Bar -->
+  <div class="top-bar">
+    <div class="container top-bar-inner">
+      <div class="top-info">
+        <span class="top-info-item"><i class="fa-solid fa-location-dot"></i> <span class="sync-address">الرياض، طريق الأمير محمد بن عبد العزيز (التحلية)</span></span>
+        <span class="top-info-item"><i class="fa-regular fa-clock"></i> <span class="sync-hours">يومياً: 12:30 ظهراً - 1:30 بعد منتصف الليل</span></span>
+        <span class="top-info-item"><i class="fa-solid fa-phone"></i> <a href="tel:+966114808899" class="sync-phone">+966 11 480 8899</a></span>
+      </div>
+      <div class="top-actions">
+        <span class="vip-badge"><i class="fa-solid fa-crown"></i> خدمة كبار الشخصيات متاحة</span>
+        <a href="reservation.html" class="instant-book-link"><i class="fa-regular fa-calendar-check text-gold"></i> حجز فوري</a>
+      </div>
+    </div>
+  </div>
+
+  <!-- Main Navigation Header -->
+  <header class="main-header">
+    <div class="container nav-container">
+      <a href="index.html" class="brand-logo">
+        <div class="brand-icon"><i class="fa-solid fa-utensils"></i></div>
+        <div class="brand-text">
+          <h1>ميرال جورميه</h1>
+          <span>MIRAL GOURMET • RIYADH</span>
+        </div>
+      </a>
+
+      <nav class="nav-menu" id="navMenu">
+        <a href="index.html" class="nav-link ">الرئيسية</a>
+        <a href="about.html" class="nav-link ">عن ميرال</a>
+        <a href="index.html#signatures" class="nav-link">أطباق التوقيع</a>
+        <a href="menu.html" class="nav-link active">قائمة الطعام</a>
+        <a href="index.html#terrace" class="nav-link">التراس والحديقة</a>
+        <a href="index.html#reviews" class="nav-link">آراء الضيوف</a>
+        <a href="contact.html" class="nav-link ">تواصل معنا</a>
+      </nav>
+
+      <div class="header-actions">
+        <a href="reservation.html" class="btn btn-primary btn-sm"><i class="fa-solid fa-chair"></i> احجز طاولتك</a>
+        <button class="mobile-toggle" onclick="toggleMobileMenu()" aria-label="القائمة">
+          <i class="fa-solid fa-bars"></i>
+        </button>
+      </div>
+    </div>
+  </header>
+
+
+  <!-- Subpage Hero -->
+  <section class="subpage-hero" style="background-image: url('https://images.unsplash.com/photo-1544025162-d76694265947?auto=format&fit=crop&w=1920&q=85');">
+    <div class="hero-overlay"></div>
+    <div class="container subpage-hero-content">
+      <span class="section-tag" style="background:rgba(255,255,255,0.1); border-color:rgba(255,255,255,0.2); color:#dfbe87;"><i class="fa-solid fa-book-open"></i> المائدة الكاملة</span>
+      <h1 class="subpage-title" id="menuPageTitle">قائمة طعام ميرال جورميه</h1>
+      <p class="subpage-desc" id="menuPageSubtitle">سيمفونية من المذاقات الرفيعة تلبي كل الأذواق بأيدي أمهر الطهاة العالميين</p>
+      <div class="breadcrumb-nav">
+        <a href="index.html" style="color:#cbd5e1;">الرئيسية</a>
+        <span>/</span>
+        <span>قائمة الطعام الكاملة</span>
+      </div>
+    </div>
+  </section>
+
+  <!-- Signature Showcase on Menu Page -->
+  <section class="signatures-section" style="padding-top:70px;">
+    <div class="container">
+      <div class="text-center">
+        <span class="section-tag"><i class="fa-solid fa-star"></i> أطباق التوقيع الحصرية</span>
+        <h2 class="section-title">أطباق الشيف الأكثر طلباً وتميزاً</h2>
+      </div>
+      <div class="signatures-grid" id="signaturesGrid">
+        <!-- Loaded via miral-sync.js -->
+      </div>
+    </div>
+  </section>
+
+  <!-- Filterable Full Menu Grid -->
+  <section class="menu-section" style="background:var(--bg-subtle);">
+    <div class="container">
+      <div class="text-center">
+        <span class="section-tag"><i class="fa-solid fa-layer-group"></i> تصنيفات المنيو</span>
+        <h2 class="section-title">تصفح حسب قسم الطعام</h2>
+      </div>
+
+      <div class="menu-tabs-wrapper" id="menuTabsNav">
+        <!-- Loaded via miral-sync.js -->
+      </div>
+
+      <div class="menu-items-grid" id="menuItemsGrid">
+        <!-- Loaded via miral-sync.js -->
+      </div>
+
+      <div class="menu-pdf-banner" style="margin-top:60px;">
+        <div class="menu-pdf-content">
+          <h3>جاهز لحجز طاولتك وتجربة هذه الأطباق؟</h3>
+          <p>يمكنك حجز طاولتك فوراً واختيار صالونك المفضل مع خدمة صف السيارات المجانية.</p>
+        </div>
+        <a href="reservation.html" class="btn btn-primary"><i class="fa-solid fa-chair"></i> احجز طاولتك الآن</a>
+      </div>
+    </div>
+  </section>
+
+  
+  <!-- Main Footer -->
+  <footer class="main-footer">
+    <div class="container">
+      <div class="footer-grid">
+        <!-- Col 1: About -->
+        <div class="footer-col footer-about">
+          <div class="brand-logo" style="margin-bottom:18px;">
+            <div class="brand-icon"><i class="fa-solid fa-utensils"></i></div>
+            <div class="brand-text">
+              <h2 style="font-size:22px; color:#fff;">ميرال جورميه</h2>
+              <span style="color:var(--primary-light);">MIRAL GOURMET DINING</span>
+            </div>
+          </div>
+          <p>
+            نقدم تجربة ضيافة متوسطية وعالمية فاخرة في بيئة معمارية بيضاء ناصعة تفيض بالحياة، حيث تلتقي متعة التذوق العالي مع رقي الأجواء ودفء الاستقبال في قلب العاصمة الرياض.
+          </p>
+          <div class="footer-social">
+            <a href="#" class="social-icon-btn" aria-label="Instagram"><i class="fa-brands fa-instagram"></i></a>
+            <a href="#" class="social-icon-btn" aria-label="Snapchat"><i class="fa-brands fa-snapchat"></i></a>
+            <a href="#" class="social-icon-btn" aria-label="Twitter X"><i class="fa-brands fa-x-twitter"></i></a>
+            <a href="https://wa.me/966114808899" class="social-icon-btn" aria-label="WhatsApp"><i class="fa-brands fa-whatsapp"></i></a>
+          </div>
+        </div>
+
+        <!-- Col 2: Quick Links -->
+        <div class="footer-col">
+          <h4>روابط سريعة</h4>
+          <div class="footer-links">
+            <a href="index.html"><i class="fa-solid fa-angle-left"></i> الصفحة الرئيسية</a>
+            <a href="about.html"><i class="fa-solid fa-angle-left"></i> قصة ميرال وفلسفتنا</a>
+            <a href="index.html#signatures"><i class="fa-solid fa-angle-left"></i> أطباق التوقيع الحصرية</a>
+            <a href="menu.html"><i class="fa-solid fa-angle-left"></i> قائمة الطعام والمشروبات</a>
+            <a href="index.html#terrace"><i class="fa-solid fa-angle-left"></i> التراس وقاعات VIP</a>
+            <a href="reservation.html"><i class="fa-solid fa-angle-left"></i> حجز طاولة فورية</a>
+            <a href="admin/index.html" style="color:var(--primary-light); font-weight:800;"><i class="fa-solid fa-lock"></i> لوحة التحكم الإدارية</a>
+          </div>
+        </div>
+
+        <!-- Col 3: Hours & Location -->
+        <div class="footer-col">
+          <h4>أوقات العمل والعنوان</h4>
+          <div class="footer-contact-list">
+            <div class="contact-row">
+              <i class="fa-solid fa-map-pin"></i>
+              <span class="sync-address">الرياض، حي السليمانية، طريق التحلية، مجمع ميرال للضيافة</span>
+            </div>
+            <div class="contact-row">
+              <i class="fa-solid fa-clock"></i>
+              <div>
+                <strong>فترة الغداء:</strong> 12:30 م - 05:00 م<br>
+                <strong>فترة العشاء:</strong> 06:30 م - 01:30 ص<br>
+                <strong>خدمة التراس:</strong> مستمرة طوال اليوم
+              </div>
+            </div>
+            <div class="contact-row">
+              <i class="fa-solid fa-phone"></i>
+              <span>هاتف الحجوزات: <a href="tel:+966114808899" class="sync-phone" style="color:#dfbe87;">+966 11 480 8899</a></span>
+            </div>
+          </div>
+        </div>
+
+        <!-- Col 4: Newsletter -->
+        <div class="footer-col">
+          <h4>النشرة الذواقة الحصرية</h4>
+          <p style="font-size:13.5px; margin-bottom:14px; color:#cbd5e1;">
+            انضم إلى قائمة ضيوف الشرف لتصلك دعوات تذوق القوائم الموسمية الحصرية وعروض المناسبات الخاصة.
+          </p>
+          <form class="newsletter-form" onsubmit="event.preventDefault(); showToast('تم الاشتراك بنجاح في النشرة الذواقة!'); this.reset();">
+            <input type="email" class="newsletter-input" placeholder="بريدك الإلكتروني" required>
+            <button type="submit" class="btn btn-primary btn-sm"><i class="fa-regular fa-paper-plane"></i></button>
+          </form>
+          <span style="font-size:11.5px; color:#64748b; margin-top:8px; display:block;">
+            <i class="fa-solid fa-shield-halved"></i> خصوصيتكم محمية بالكامل ولن نرسل أي رسائل غير مرغوبة.
+          </span>
+        </div>
+      </div>
+
+      <!-- Bottom Bar -->
+      <div class="footer-bottom">
+        <div>
+          جميع الحقوق محفوظة © 2026 <strong>مطعم ميرال جورميه (Miral Gourmet)</strong>
+        </div>
+        <div class="footer-bottom-links">
+          <a href="#">سياسة الخصوصية</a>
+          <span>•</span>
+          <a href="#">الشروط والأحكام</a>
+          <span>•</span>
+          <a href="#">معايير الجودة وسلامة الغذاء</a>
+          <span>•</span>
+          <a href="admin/index.html" class="text-gold"><i class="fa-solid fa-gauge"></i> الإدارة</a>
+        </div>
+      </div>
+    </div>
+  </footer>
+
+  <!-- Booking Confirmation Modal -->
+  <div class="modal-backdrop" id="bookingConfirmationModal">
+    <div class="modal-box">
+      <div class="modal-icon"><i class="fa-solid fa-circle-check"></i></div>
+      <h3 class="modal-title">تم استلام طلب الحجز بنجاح!</h3>
+      <p class="modal-desc" id="modalBookingDesc">
+        شكراً لاختياركم مطعم ميرال جورميه. تم تأكيد بيانات حجزكم بنجاح وسيتواصل معكم فريق الاستقبال لتجهيز طاولتكم بأرقى مستوى.
+      </p>
+      <button class="btn btn-primary" onclick="closeModal()" style="width:100%;">
+        <i class="fa-solid fa-check"></i> حسناً، رائع
+      </button>
+    </div>
+  </div>
+
+  <script src="js/miral-sync.js"></script>
+  <script src="js/main.js"></script>
+
+
+</body>
+</html>
