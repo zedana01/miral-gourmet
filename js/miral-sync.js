@@ -299,9 +299,14 @@ document.addEventListener('DOMContentLoaded', () => {
     let tabsHtml = '';
     data.categories.forEach((cat, idx) => {
       tabsHtml += `
-        <button class="menu-tab-btn ${idx === 0 ? 'active' : ''}" onclick="filterMenuCategory('${cat.slug}', this)">
-          ${cat.name}
-        </button>
+        <div style="display:inline-flex; align-items:center; gap:4px;">
+          <button class="menu-tab-btn ${idx === 0 ? 'active' : ''}" onclick="filterMenuCategory('${cat.slug}', this)">
+            ${cat.name}
+          </button>
+          <a href="category.html?cat=${cat.slug}" title="زيارة صفحة قسم ${cat.name}" style="color:var(--primary); font-size:12px; background:var(--primary-subtle); padding:8px 10px; border-radius:50%; border:1px solid var(--primary-border);">
+            <i class="fa-solid fa-arrow-up-right-from-square"></i>
+          </a>
+        </div>
       `;
     });
     tabsContainer.innerHTML = tabsHtml;
@@ -317,17 +322,23 @@ document.addEventListener('DOMContentLoaded', () => {
       sigHtml += `
         <div class="dish-card">
           <div class="dish-img-wrapper">
-            <img src="${dish.image}" alt="${dish.title}" class="dish-img" loading="lazy">
+            <a href="product.html?id=${dish.id}">
+              <img src="${dish.image}" alt="${dish.title}" class="dish-img" loading="lazy">
+            </a>
             <span class="dish-badge">${dish.badge || 'مميز'}</span>
             <span class="dish-price-tag">${dish.price} ر.س</span>
           </div>
           <div class="dish-info">
             <div class="dish-tags">${tagsHtml}</div>
-            <h3 class="dish-title">${dish.title}</h3>
+            <h3 class="dish-title">
+              <a href="product.html?id=${dish.id}" style="color:inherit;">${dish.title}</a>
+            </h3>
             <p class="dish-desc">${dish.desc}</p>
             <div class="dish-footer">
-              <span class="dish-cal"><i class="fa-solid fa-fire"></i> ${dish.calories} سعرة</span>
-              <button class="btn btn-outline btn-sm" onclick="quickAddToBooking('${dish.title.replace(/'/g, "\'")}')">
+              <a href="product.html?id=${dish.id}" class="btn btn-outline btn-sm">
+                <i class="fa-solid fa-eye"></i> صفحة الطبق
+              </a>
+              <button class="btn btn-primary btn-sm" onclick="quickAddToBooking('${dish.title.replace(/'/g, "\'")}')">
                 <i class="fa-solid fa-plus"></i> إضافة للحجز
               </button>
             </div>
@@ -383,11 +394,13 @@ function renderMenuGrid(dishes) {
     html += `
       <div class="menu-list-card" data-category="${dish.category}">
         <div class="menu-list-thumb">
-          <img src="${dish.image}" alt="${dish.title}" loading="lazy">
+          <a href="product.html?id=${dish.id}">
+            <img src="${dish.image}" alt="${dish.title}" loading="lazy">
+          </a>
         </div>
         <div class="menu-list-content">
           <div class="menu-list-header">
-            <h4 class="menu-list-title">${dish.title}</h4>
+            <h4 class="menu-list-title"><a href="product.html?id=${dish.id}" style="color:inherit;">${dish.title}</a></h4>
             <span class="menu-list-price">${dish.price} ر.س</span>
           </div>
           <p class="menu-list-desc">${dish.desc}</p>

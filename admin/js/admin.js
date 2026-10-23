@@ -132,6 +132,7 @@ function renderDishesTable() {
         <td>${dish.isSignature ? '<span style="color:#10b981; font-weight:800;"><i class="fa-solid fa-star"></i> طبق توقيع</span>' : '<span style="color:var(--text-dim);">عادي</span>'}</td>
         <td>
           <div style="display:flex; gap:8px;">
+            <a href="../product.html?id=${dish.id}" target="_blank" class="btn btn-outline btn-sm" style="color:var(--admin-gold);"><i class="fa-solid fa-arrow-up-right-from-square"></i> عرض</a>
             <button class="btn btn-outline btn-sm" onclick="editDish('${dish.id}')"><i class="fa-solid fa-pen"></i> تعديل</button>
             <button class="btn btn-danger btn-sm" onclick="deleteDish('${dish.id}')"><i class="fa-solid fa-trash"></i> حذف</button>
           </div>
@@ -230,6 +231,7 @@ function renderCategoriesTable() {
         <td><span class="badge-tag">${cat.badge || '-'}</span></td>
         <td>
           <div style="display:flex; gap:8px;">
+            <a href="../category.html?cat=${cat.slug}" target="_blank" class="btn btn-outline btn-sm" style="color:var(--admin-gold);"><i class="fa-solid fa-arrow-up-right-from-square"></i> عرض</a>
             <button class="btn btn-outline btn-sm" onclick="editCategory('${cat.id || cat.slug}')"><i class="fa-solid fa-pen"></i> تعديل</button>
             ${!isProtected ? `<button class="btn btn-danger btn-sm" onclick="deleteCategory('${cat.id || cat.slug}')"><i class="fa-solid fa-trash"></i> حذف</button>` : '<span style="color:var(--text-dim); font-size:12px;">(رئيسي)</span>'}
           </div>
