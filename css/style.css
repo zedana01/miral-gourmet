@@ -1982,3 +1982,41 @@ textarea.form-control {
   .product-info-panel { padding: 22px 18px; }
   .product-title { font-size: 24px; }
 }
+
+
+/* Language Switcher Button */
+.lang-switcher-btn {
+  display: inline-flex;
+  align-items: center;
+  gap: 7px;
+  padding: 7px 16px;
+  border-radius: var(--radius-pill);
+  background: var(--primary-subtle);
+  border: 1px solid var(--primary-border);
+  color: var(--primary);
+  font-size: 13.5px;
+  font-weight: 800;
+  text-decoration: none;
+  transition: var(--transition);
+}
+
+.lang-switcher-btn:hover {
+  background: var(--primary);
+  color: #ffffff;
+  transform: translateY(-2px);
+  box-shadow: 0 4px 14px rgba(184, 134, 74, 0.3);
+}
+
+.top-lang-link {
+  color: #dfbe87;
+  font-weight: 700;
+  font-size: 12.5px;
+  display: inline-flex;
+  align-items: center;
+  gap: 5px;
+  transition: var(--transition);
+}
+
+.top-lang-link:hover {
+  color: #ffffff;
+}

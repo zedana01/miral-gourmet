@@ -1,0 +1,641 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Miral Gourmet | Contemporary Mediterranean Fine Dining in Riyadh</title>
+  <meta name="description" content="Miral Gourmet & Ristorante in Tahlia Riyadh. Artisan wood-fired steaks, wild sea catches, sunlit garden terrace, and royal Andalusian hospitality.">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+  <link rel="stylesheet" href="../css/style.css">
+  <link rel="stylesheet" href="../css/style-en.css">
+</head>
+<body class="en-page">
+
+  
+  <!-- Top Utility Bar -->
+  <div class="top-bar">
+    <div class="container top-bar-inner">
+      <div class="top-info">
+        <span class="top-info-item"><i class="fa-solid fa-location-dot"></i> <span>Riyadh, Prince Muhammad Ibn Abd Al Aziz Rd (Tahlia)</span></span>
+        <span class="top-info-item"><i class="fa-regular fa-clock"></i> <span>Daily: 12:30 PM - 1:30 AM</span></span>
+        <span class="top-info-item"><i class="fa-solid fa-phone"></i> <a href="tel:+966114808899" class="sync-phone">+966 11 480 8899</a></span>
+      </div>
+      <div class="top-actions">
+        <span class="vip-badge"><i class="fa-solid fa-crown"></i> VIP Service Available</span>
+        <a href="reservation.html" class="instant-book-link"><i class="fa-regular fa-calendar-check text-gold"></i> Instant Booking</a>
+        <a href="../index.html" class="top-lang-link"><i class="fa-solid fa-globe"></i> العربية</a>
+      </div>
+    </div>
+  </div>
+
+  <!-- Main Navigation Header -->
+  <header class="main-header">
+    <div class="container nav-container">
+      <a href="index.html" class="brand-logo">
+        <div class="brand-icon"><i class="fa-solid fa-utensils"></i></div>
+        <div class="brand-text">
+          <h1>MIRAL GOURMET</h1>
+          <span>FINE DINING • RIYADH</span>
+        </div>
+      </a>
+
+      <nav class="nav-menu" id="navMenu">
+        <a href="index.html" class="nav-link active">Home</a>
+        <a href="about.html" class="nav-link ">About Us</a>
+        <a href="index.html#signatures" class="nav-link">Signatures</a>
+        <a href="menu.html" class="nav-link ">Menu</a>
+        <a href="category.html?cat=all" class="nav-link ">Categories</a>
+        <a href="index.html#terrace" class="nav-link">Terrace & VIP</a>
+        <a href="contact.html" class="nav-link ">Contact</a>
+      </nav>
+
+      <div class="header-actions">
+        <a href="../index.html" class="lang-switcher-btn" title="التحويل إلى اللغة العربية">
+          <i class="fa-solid fa-globe"></i> العربية
+        </a>
+        <a href="reservation.html" class="btn btn-primary btn-sm"><i class="fa-solid fa-chair"></i> Book Table</a>
+        <button class="mobile-toggle" onclick="toggleMobileMenu()" aria-label="Menu">
+          <i class="fa-solid fa-bars"></i>
+        </button>
+      </div>
+    </div>
+  </header>
+
+
+  <!-- Hero Section -->
+  <section class="hero-section" id="heroSection" style="background-image: url('https://images.unsplash.com/photo-1517248135467-4c7edcad34c4?auto=format&fit=crop&w=1920&q=85');">
+    <div class="hero-overlay"></div>
+    <div class="container hero-content">
+      <div class="hero-badge">
+        <i class="fa-solid fa-award"></i>
+        <span>Excellence in Luxury Hospitality 2026</span>
+      </div>
+      <h2 class="hero-title">Contemporary Culinary Art with Andalusian & Mediterranean Soul</h2>
+      <p class="hero-desc">
+        Embark on an exclusive sensory journey where the finest organic farm ingredients meet innovative chef craft, within an illuminated, mesmerizing atmosphere.
+      </p>
+      <div class="hero-btns">
+        <a href="#booking" class="btn btn-primary"><i class="fa-solid fa-chair"></i> Reserve Your Table</a>
+        <a href="menu.html" class="btn btn-white"><i class="fa-solid fa-utensils"></i> Explore Full Menu</a>
+      </div>
+
+      <!-- Hero Indicators -->
+      <div class="hero-indicators">
+        <div class="indicator-card active">
+          <div class="indicator-num">01</div>
+          <div class="indicator-text">
+            <strong>The Royal Hall</strong>
+            <span>Culinary Masterclass & Hospitality</span>
+          </div>
+        </div>
+        <div class="indicator-card">
+          <div class="indicator-num">02</div>
+          <div class="indicator-text">
+            <strong>Intimate Salons</strong>
+            <span>Warm Ambience & Complete Privacy</span>
+          </div>
+        </div>
+        <div class="indicator-card">
+          <div class="indicator-num">03</div>
+          <div class="indicator-text">
+            <strong>Signature Cuts</strong>
+            <span>A5 Wagyu & Olive Wood Fire</span>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Quick Booking Ribbon Bar -->
+  <div class="container quick-booking-bar">
+    <div class="booking-bar-card">
+      <form class="booking-bar-form" onsubmit="event.preventDefault(); window.location.href='reservation.html';">
+        <div class="form-group-bar">
+          <label><i class="fa-regular fa-calendar"></i> Date of Visit</label>
+          <input type="date" class="form-control-bar" value="2026-10-25">
+        </div>
+        <div class="form-group-bar">
+          <label><i class="fa-regular fa-clock"></i> Reservation Time</label>
+          <select class="form-control-bar">
+            <option>01:00 PM (Lunch)</option>
+            <option>03:30 PM (Late Lunch)</option>
+            <option>07:30 PM (Early Dinner)</option>
+            <option selected>09:30 PM (Main Dinner)</option>
+            <option>11:30 PM (Miral Soirée)</option>
+          </select>
+        </div>
+        <div class="form-group-bar">
+          <label><i class="fa-solid fa-users"></i> Number of Guests</label>
+          <select class="form-control-bar">
+            <option>2 Guests (Intimate Table)</option>
+            <option selected>3 to 4 Guests</option>
+            <option>5 to 6 Guests (Family)</option>
+            <option>7 to 10 Guests (Group)</option>
+            <option>Private VIP Salon (12+)</option>
+          </select>
+        </div>
+        <div class="form-group-bar">
+          <label><i class="fa-solid fa-couch"></i> Seating Area</label>
+          <select class="form-control-bar">
+            <option selected>Open Garden Terrace</option>
+            <option>Illuminated Main Dining Hall</option>
+            <option>Private VIP Royal Salon</option>
+          </select>
+        </div>
+        <button type="submit" class="btn btn-primary" style="height:48px;">
+          <i class="fa-solid fa-magnifying-glass"></i> Check Availability
+        </button>
+      </form>
+    </div>
+  </div>
+
+  <!-- 4 Core Pillars -->
+  <section class="pillars-section">
+    <div class="container">
+      <div class="pillars-grid">
+        <div class="pillar-card">
+          <div class="pillar-icon-box"><i class="fa-solid fa-seedling"></i></div>
+          <h3>100% Organic Produce</h3>
+          <p>We embody farm-to-table philosophy, harvesting daily fresh vegetables and herbs from certified partner estates.</p>
+        </div>
+        <div class="pillar-card">
+          <div class="pillar-icon-box"><i class="fa-solid fa-hat-chef"></i></div>
+          <h3>World-Renowned Chefs</h3>
+          <p>Headed by an internationally awarded Executive Chef, blending Mediterranean passion with Saudi grandeur.</p>
+        </div>
+        <div class="pillar-card">
+          <div class="pillar-icon-box"><i class="fa-solid fa-sun-plant-wilt"></i></div>
+          <h3>Sunlit Garden Terrace</h3>
+          <p>Inspired by modern Riyadh desert oases, offering warm natural light by day and romantic star-lit charm by night.</p>
+        </div>
+        <div class="pillar-card">
+          <div class="pillar-icon-box"><i class="fa-solid fa-gem"></i></div>
+          <h3>Private VIP Suites</h3>
+          <p>Exclusive enclosed salons for corporate executives and private families, featuring bespoke tasting menus and a dedicated butler.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Story / About Section -->
+  <section class="story-section" id="about">
+    <div class="container">
+      <div class="story-grid">
+        <div class="story-images">
+          <img src="https://images.unsplash.com/photo-1555396273-367ea4eb4db5?auto=format&fit=crop&w=800&q=80" alt="Miral Gourmet Story" class="story-img-main">
+          <div class="story-img-badge">
+            <div class="badge-icon"><i class="fa-solid fa-award"></i></div>
+            <div class="badge-text">
+              <strong>15+</strong>
+              <span>Years of Culinary Leadership</span>
+            </div>
+          </div>
+        </div>
+
+        <div class="story-content">
+          <span class="section-tag"><i class="fa-solid fa-feather"></i> The Miral Story</span>
+          <h2>Where Culinary Passion Meets an Illuminated White Canvas</h2>
+          <p class="story-text">
+            «Miral» was born from a visionary ambition to reinvent fine dining in Riyadh: departing from shadowy dining rooms and cultivating an illuminated, vibrant sanctuary radiating life and architectural grace.
+          </p>
+          <p class="story-text">
+            Every dish presented at Miral is a harmonized masterpiece. The voyage commences from single-estate cold-pressed olive oils, through line-caught Red Sea delicacies, down to slow cooking over aged olive wood.
+          </p>
+
+          <div class="story-quote-card">
+            <p>"Cooking is not merely executing recipes; it is an unspoken dialogue between the chef's spirit and the guest's senses. At Miral, each bite is crafted to become a lasting memory."</p>
+            <div class="chef-info">
+              <span class="chef-name">Chef Fabrizio Laurent</span>
+              <span class="chef-title">• Executive Head Chef</span>
+            </div>
+          </div>
+
+          <div class="stats-row">
+            <div class="stat-item">
+              <strong>48+</strong>
+              <span>Bespoke Signatures</span>
+            </div>
+            <div class="stat-item">
+              <strong>120K</strong>
+              <span>Delighted Guests Yearly</span>
+            </div>
+            <div class="stat-item">
+              <strong>99.4%</strong>
+              <span>Satisfaction Rating</span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Signature Dishes Section -->
+  <section class="signatures-section" id="signatures">
+    <div class="container">
+      <div class="text-center">
+        <span class="section-tag"><i class="fa-solid fa-star"></i> Exclusive Chef Signatures</span>
+        <h2 class="section-title">Curated Creations for the Discerning Palate</h2>
+        <p class="section-desc">Six extraordinary creations designed to celebrate Miral's culinary identity, balanced flavors and exquisite aesthetics.</p>
+      </div>
+
+      <div class="signatures-grid" id="signaturesGrid">
+        <!-- Loaded via miral-sync-en.js -->
+      </div>
+    </div>
+  </section>
+
+  <!-- Menu Section -->
+  <section class="menu-section" id="menu">
+    <div class="container">
+      <div class="text-center">
+        <span class="section-tag"><i class="fa-solid fa-book-open"></i> Symphony of Fine Flavors</span>
+        <h2 class="section-title">A Gastronomic Repertoire for Every Taste</h2>
+        <p class="section-desc">Navigate through our artisanal courses to discover uncompromised ingredients prepared to perfection.</p>
+      </div>
+
+      <div class="menu-tabs-wrapper" id="menuTabsNav">
+        <!-- Loaded via miral-sync-en.js -->
+      </div>
+
+      <div class="menu-items-grid" id="menuItemsGrid">
+        <!-- Loaded via miral-sync-en.js -->
+      </div>
+
+      <div class="menu-pdf-banner">
+        <div class="menu-pdf-content">
+          <h3>Prefer to browse our complete collection?</h3>
+          <p>Our complete menu includes specialty coffees, cold pressed sips, and seasonal 2026 tasting courses.</p>
+        </div>
+        <a href="menu.html" class="btn btn-primary"><i class="fa-solid fa-utensils"></i> Browse Full Menu</a>
+      </div>
+    </div>
+  </section>
+
+  <!-- Terrace & VIP Lounge Showcase -->
+  <section class="terrace-section" id="terrace">
+    <div class="container">
+      <div class="terrace-grid">
+        <div class="terrace-content">
+          <span class="section-tag"><i class="fa-solid fa-tree"></i> Exceptional Ambience & Seclusion</span>
+          <h2 class="section-title">Open Garden Terrace & Royal VIP Salons</h2>
+          <p class="section-desc" style="margin:0 0 20px 0;">
+            Whether you seek a sun-drenched lunch amidst gentle fountain water features or an executive business dinner demanding utmost confidentiality, Miral provides the ideal setting.
+          </p>
+
+          <div class="terrace-features-list">
+            <div class="terrace-feature-item">
+              <div class="terrace-feature-icon"><i class="fa-solid fa-cloud-sun"></i></div>
+              <div class="terrace-feature-text">
+                <strong>Climate-Controlled Garden Terrace:</strong>
+                <p>Equipped with micro-cooling mist for summer and warm radiant outdoor heaters for winter comfort.</p>
+              </div>
+            </div>
+            <div class="terrace-feature-item">
+              <div class="terrace-feature-icon"><i class="fa-solid fa-crown"></i></div>
+              <div class="terrace-feature-text">
+                <strong>Executive VIP Suites:</strong>
+                <p>Private entrances, interactive presentation screens, dedicated butler service and private elevator access.</p>
+              </div>
+            </div>
+            <div class="terrace-feature-item">
+              <div class="terrace-feature-icon"><i class="fa-solid fa-champagne-glasses"></i></div>
+              <div class="terrace-feature-text">
+                <strong>Bespoke Event Hosting:</strong>
+                <p>Full coordination for anniversaries, private birthdays, and high-level diplomatic receptions.</p>
+              </div>
+            </div>
+          </div>
+
+          <div style="display:flex; gap:14px; flex-wrap:wrap;">
+            <a href="reservation.html" class="btn btn-primary"><i class="fa-solid fa-calendar-check"></i> Book VIP Suite or Terrace</a>
+            <a href="contact.html" class="btn btn-outline"><i class="fa-solid fa-comments"></i> Contact Event Concierge</a>
+          </div>
+        </div>
+
+        <div class="terrace-gallery">
+          <div class="terrace-gallery-item">
+            <img src="https://images.unsplash.com/photo-1517248135467-4c7edcad34c4?auto=format&fit=crop&w=800&q=80" alt="Garden Terrace">
+            <div class="gallery-caption">Sunlit Outdoor Terrace</div>
+          </div>
+          <div class="terrace-gallery-item">
+            <img src="https://images.unsplash.com/photo-1552566626-52f8b828add9?auto=format&fit=crop&w=800&q=80" alt="VIP Suite">
+            <div class="gallery-caption">Royal VIP Suite</div>
+          </div>
+          <div class="terrace-gallery-item">
+            <img src="https://images.unsplash.com/photo-1551024709-8f23befc6f87?auto=format&fit=crop&w=700&q=80" alt="Artisan Bar">
+            <div class="gallery-caption">Artisan Mocktail Bar</div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Reservation Section -->
+  <section class="reservation-section" id="booking">
+    <div class="container">
+      <div class="text-center">
+        <span class="section-tag"><i class="fa-regular fa-calendar-check"></i> Guaranteed Booking</span>
+        <h2 class="section-title">Reserve Your Table at Miral Gourmet</h2>
+        <p class="section-desc">We look forward to curating an unforgettable evening. Please provide your visit details.</p>
+      </div>
+
+      <div class="reservation-grid">
+        <div class="vip-perks-card">
+          <div>
+            <div class="vip-perks-header">
+              <i class="fa-solid fa-crown" style="font-size:32px; color:var(--primary-light); margin-bottom:12px;"></i>
+              <h3>Exclusive Hospitality Perks</h3>
+              <p>An elevated journey from arrival to farewell</p>
+            </div>
+            <div class="vip-perks-list">
+              <div class="vip-perk-item">
+                <i class="fa-solid fa-car-side"></i>
+                <div>
+                  <strong>Complimentary Valet Parking:</strong>
+                  <span>Reserved secure parking for all pre-booked dinner guests.</span>
+                </div>
+              </div>
+              <div class="vip-perk-item">
+                <i class="fa-solid fa-bell-concierge"></i>
+                <div>
+                  <strong>Royal Host Escort:</strong>
+                  <span>Personal accompaniment straight to your reserved table with zero waiting time.</span>
+                </div>
+              </div>
+              <div class="vip-perk-item">
+                <i class="fa-solid fa-cake-candles"></i>
+                <div>
+                  <strong>Complimentary Occasion Styling:</strong>
+                  <span>Elegant table setup and Miral's signature celebration dessert.</span>
+                </div>
+              </div>
+              <div class="vip-perk-item">
+                <i class="fa-brands fa-whatsapp"></i>
+                <div>
+                  <strong>Instant WhatsApp Confirmation:</strong>
+                  <span>Digital reservation voucher and exact location pin delivered to your phone.</span>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <div class="vip-call-box">
+            <span>Special arrangements or full hall buyout?</span>
+            <a href="tel:+966114808899" class="sync-phone">+966 11 480 8899</a>
+          </div>
+        </div>
+
+        <div class="booking-form-card">
+          <form onsubmit="handleBookingSubmitEN(event)">
+            <div class="booking-form-grid">
+              <div class="form-group">
+                <label>Full Name *</label>
+                <input type="text" name="name" class="form-control" placeholder="Your Name" required>
+              </div>
+              <div class="form-group">
+                <label>Mobile Number (WhatsApp) *</label>
+                <input type="tel" name="phone" class="form-control" placeholder="+966 5X XXX XXXX" required>
+              </div>
+              <div class="form-group">
+                <label>Email Address</label>
+                <input type="email" name="email" class="form-control" placeholder="name@domain.com">
+              </div>
+              <div class="form-group">
+                <label>Party Size *</label>
+                <select name="guests" class="form-control" required>
+                  <option>2 Guests (Intimate Table)</option>
+                  <option selected>4 Guests (Family Table)</option>
+                  <option>6 Guests</option>
+                  <option>8 Guests (Group)</option>
+                  <option>12+ Guests (Private VIP Salon)</option>
+                </select>
+              </div>
+              <div class="form-group">
+                <label>Date of Visit *</label>
+                <input type="date" name="date" class="form-control" value="2026-10-25" required>
+              </div>
+              <div class="form-group">
+                <label>Arrival Time *</label>
+                <select name="time" class="form-control" required>
+                  <option>01:00 PM (Lunch)</option>
+                  <option>03:30 PM (Late Lunch)</option>
+                  <option selected>08:00 PM (Dinner)</option>
+                  <option>10:00 PM</option>
+                  <option>11:30 PM (Late Dining)</option>
+                </select>
+              </div>
+              <div class="form-group">
+                <label>Seating Preference *</label>
+                <select name="seating" class="form-control">
+                  <option selected>Open Garden Terrace (Al Fresco)</option>
+                  <option>Illuminated Main Hall</option>
+                  <option>Private VIP Salon</option>
+                </select>
+              </div>
+              <div class="form-group">
+                <label>Occasion</label>
+                <select name="occasion" class="form-control">
+                  <option selected>Casual Fine Dining</option>
+                  <option>Birthday / Anniversary</option>
+                  <option>Corporate Business Dinner</option>
+                  <option>Graduation / Promotion</option>
+                </select>
+              </div>
+              <div class="form-group form-full">
+                <label>Special Requests or Dietary Notes (Allergies, Floral Bouquet, Cake)</label>
+                <textarea name="notes" id="bookingNotes" class="form-control" placeholder="Kindly detail any specific wishes..."></textarea>
+              </div>
+              <div class="form-group form-full">
+                <button type="submit" class="btn btn-primary" style="width:100%; height:52px; font-size:16.5px;">
+                  <i class="fa-solid fa-calendar-check"></i> Confirm Instant Reservation Request
+                </button>
+              </div>
+            </div>
+          </form>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Guest Reviews -->
+  <section class="reviews-section" id="reviews">
+    <div class="container">
+      <div class="text-center">
+        <span class="section-tag"><i class="fa-solid fa-quote-right"></i> Guest Impressions</span>
+        <h2 class="section-title">What Our Guests Say About Miral</h2>
+        <p class="section-desc">We cherish the confidence of our patrons and continuously strive to exceed expectations.</p>
+      </div>
+
+      <div class="reviews-grid">
+        <div class="review-card">
+          <div class="review-stars">
+            <i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i>
+          </div>
+          <p class="review-text">
+            "Beyond expectations! The illuminated decor and terrace design turn the restaurant into a tranquil haven amidst Riyadh's bustle. The honey and thyme lamb chops were unparalleled."
+          </p>
+          <div class="reviewer-info">
+            <div class="reviewer-avatar">S</div>
+            <div>
+              <div class="reviewer-name">Saud Al-Mogren</div>
+              <div class="reviewer-title">Entrepreneur • Riyadh</div>
+            </div>
+          </div>
+        </div>
+
+        <div class="review-card">
+          <div class="review-stars">
+            <i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i>
+          </div>
+          <p class="review-text">
+            "Celebrated our anniversary in the Private VIP Suite. The attention to detail, floral arrangement, gentle music, and 24K gold mille-feuille made it deeply memorable."
+          </p>
+          <div class="reviewer-info">
+            <div class="reviewer-avatar">F</div>
+            <div>
+              <div class="reviewer-name">Dr. Faisal Al-Hajri</div>
+              <div class="reviewer-title">Frequent Patron • Riyadh</div>
+            </div>
+          </div>
+        </div>
+
+        <div class="review-card">
+          <div class="review-stars">
+            <i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i>
+          </div>
+          <p class="review-text">
+            "As an international food critic, Miral proves Saudi Arabia's culinary scene competes with world capitals. The Wagyu tenderloin and fresh burrata were in total harmony."
+          </p>
+          <div class="reviewer-info">
+            <div class="reviewer-avatar">N</div>
+            <div>
+              <div class="reviewer-name">Nouf Al-Subaie</div>
+              <div class="reviewer-title">Culinary Journalist</div>
+            </div>
+          </div>
+        </div>
+
+        <div class="review-card">
+          <div class="review-stars">
+            <i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i>
+          </div>
+          <p class="review-text">
+            "Natural daylight brings an incredible fresh energy. The specialty coffee paired with the royal gold mocktail and date cheesecake makes afternoon tea sublime."
+          </p>
+          <div class="reviewer-info">
+            <div class="reviewer-avatar">S</div>
+            <div>
+              <div class="reviewer-name">Sarah Al-Qahtani</div>
+              <div class="reviewer-title">Interior Architect</div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  
+  <!-- Main Footer -->
+  <footer class="main-footer">
+    <div class="container">
+      <div class="footer-grid">
+        <div class="footer-col footer-about">
+          <div class="brand-logo" style="margin-bottom:18px;">
+            <div class="brand-icon"><i class="fa-solid fa-utensils"></i></div>
+            <div class="brand-text">
+              <h2 style="font-size:22px; color:#fff;">MIRAL GOURMET</h2>
+              <span style="color:var(--primary-light);">FINE DINING • RIYADH</span>
+            </div>
+          </div>
+          <p>
+            Experience contemporary Mediterranean and Andalusian fine dining in an airy, illuminated sanctuary in the heart of Riyadh, where culinary art meets world-class hospitality.
+          </p>
+          <div class="footer-social">
+            <a href="#" class="social-icon-btn" aria-label="Instagram"><i class="fa-brands fa-instagram"></i></a>
+            <a href="#" class="social-icon-btn" aria-label="Snapchat"><i class="fa-brands fa-snapchat"></i></a>
+            <a href="#" class="social-icon-btn" aria-label="Twitter X"><i class="fa-brands fa-x-twitter"></i></a>
+            <a href="https://wa.me/966114808899" class="social-icon-btn" aria-label="WhatsApp"><i class="fa-brands fa-whatsapp"></i></a>
+          </div>
+        </div>
+
+        <div class="footer-col">
+          <h4>Quick Links</h4>
+          <div class="footer-links">
+            <a href="index.html"><i class="fa-solid fa-angle-right"></i> Home Page</a>
+            <a href="about.html"><i class="fa-solid fa-angle-right"></i> Our Story & Philosophy</a>
+            <a href="category.html?cat=all"><i class="fa-solid fa-angle-right"></i> Menu Categories</a>
+            <a href="menu.html"><i class="fa-solid fa-angle-right"></i> Full Menu & Sips</a>
+            <a href="reservation.html"><i class="fa-solid fa-angle-right"></i> Instant Reservation</a>
+            <a href="../admin/index.html" style="color:var(--primary-light); font-weight:800;"><i class="fa-solid fa-lock"></i> Admin CMS</a>
+          </div>
+        </div>
+
+        <div class="footer-col">
+          <h4>Hours & Location</h4>
+          <div class="footer-contact-list">
+            <div class="contact-row">
+              <i class="fa-solid fa-map-pin"></i>
+              <span>Riyadh, As Sulimaniyah, Prince Muhammad Ibn Abd Al Aziz Rd (Tahlia St)</span>
+            </div>
+            <div class="contact-row">
+              <i class="fa-solid fa-clock"></i>
+              <div>
+                <strong>Lunch Service:</strong> 12:30 PM - 05:00 PM<br>
+                <strong>Dinner Service:</strong> 06:30 PM - 01:30 AM<br>
+                <strong>Garden Terrace:</strong> All-day dining
+              </div>
+            </div>
+            <div class="contact-row">
+              <i class="fa-solid fa-phone"></i>
+              <span>Direct Reservations: <a href="tel:+966114808899" style="color:#dfbe87;">+966 11 480 8899</a></span>
+            </div>
+          </div>
+        </div>
+
+        <div class="footer-col">
+          <h4>Gourmet Newsletter</h4>
+          <p style="font-size:13.5px; margin-bottom:14px; color:#cbd5e1;">
+            Join our private circle of epicures for exclusive tasting invitations and seasonal menus.
+          </p>
+          <form class="newsletter-form" onsubmit="event.preventDefault(); showToastEN('Thank you for subscribing to Miral Newsletter!'); this.reset();">
+            <input type="email" class="newsletter-input" placeholder="Your email address" required>
+            <button type="submit" class="btn btn-primary btn-sm"><i class="fa-regular fa-paper-plane"></i></button>
+          </form>
+        </div>
+      </div>
+
+      <div class="footer-bottom">
+        <div>
+          All Rights Reserved © 2026 <strong>Miral Gourmet & Ristorante</strong>
+        </div>
+        <div class="footer-bottom-links">
+          <a href="#">Privacy Policy</a>
+          <span>•</span>
+          <a href="#">Terms & Conditions</a>
+          <span>•</span>
+          <a href="../index.html" class="text-gold"><i class="fa-solid fa-globe"></i> النسخة العربية</a>
+        </div>
+      </div>
+    </div>
+  </footer>
+
+  <!-- Booking Confirmation Modal -->
+  <div class="modal-backdrop" id="bookingConfirmationModal">
+    <div class="modal-box">
+      <div class="modal-icon"><i class="fa-solid fa-circle-check"></i></div>
+      <h3 class="modal-title">Table Reservation Received!</h3>
+      <p class="modal-desc" id="modalBookingDesc">
+        Thank you for choosing Miral Gourmet. Our concierge team is preparing your table with utmost care.
+      </p>
+      <button class="btn btn-primary" onclick="closeModalEN()" style="width:100%;">
+        <i class="fa-solid fa-check"></i> Excellent, Thank You
+      </button>
+    </div>
+  </div>
+
+  <script src="../js/main.js"></script>
+  <script src="../js/miral-sync-en.js"></script>
+
+
+</body>
+</html>

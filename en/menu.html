@@ -1,0 +1,221 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Menu & Courses | Miral Gourmet Riyadh</title>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+  <link rel="stylesheet" href="../css/style.css">
+  <link rel="stylesheet" href="../css/style-en.css">
+</head>
+<body class="en-page">
+
+  
+  <!-- Top Utility Bar -->
+  <div class="top-bar">
+    <div class="container top-bar-inner">
+      <div class="top-info">
+        <span class="top-info-item"><i class="fa-solid fa-location-dot"></i> <span>Riyadh, Prince Muhammad Ibn Abd Al Aziz Rd (Tahlia)</span></span>
+        <span class="top-info-item"><i class="fa-regular fa-clock"></i> <span>Daily: 12:30 PM - 1:30 AM</span></span>
+        <span class="top-info-item"><i class="fa-solid fa-phone"></i> <a href="tel:+966114808899" class="sync-phone">+966 11 480 8899</a></span>
+      </div>
+      <div class="top-actions">
+        <span class="vip-badge"><i class="fa-solid fa-crown"></i> VIP Service Available</span>
+        <a href="reservation.html" class="instant-book-link"><i class="fa-regular fa-calendar-check text-gold"></i> Instant Booking</a>
+        <a href="../menu.html" class="top-lang-link"><i class="fa-solid fa-globe"></i> العربية</a>
+      </div>
+    </div>
+  </div>
+
+  <!-- Main Navigation Header -->
+  <header class="main-header">
+    <div class="container nav-container">
+      <a href="index.html" class="brand-logo">
+        <div class="brand-icon"><i class="fa-solid fa-utensils"></i></div>
+        <div class="brand-text">
+          <h1>MIRAL GOURMET</h1>
+          <span>FINE DINING • RIYADH</span>
+        </div>
+      </a>
+
+      <nav class="nav-menu" id="navMenu">
+        <a href="index.html" class="nav-link ">Home</a>
+        <a href="about.html" class="nav-link ">About Us</a>
+        <a href="index.html#signatures" class="nav-link">Signatures</a>
+        <a href="menu.html" class="nav-link active">Menu</a>
+        <a href="category.html?cat=all" class="nav-link ">Categories</a>
+        <a href="index.html#terrace" class="nav-link">Terrace & VIP</a>
+        <a href="contact.html" class="nav-link ">Contact</a>
+      </nav>
+
+      <div class="header-actions">
+        <a href="../menu.html" class="lang-switcher-btn" title="التحويل إلى اللغة العربية">
+          <i class="fa-solid fa-globe"></i> العربية
+        </a>
+        <a href="reservation.html" class="btn btn-primary btn-sm"><i class="fa-solid fa-chair"></i> Book Table</a>
+        <button class="mobile-toggle" onclick="toggleMobileMenu()" aria-label="Menu">
+          <i class="fa-solid fa-bars"></i>
+        </button>
+      </div>
+    </div>
+  </header>
+
+
+  <section class="subpage-hero" style="background-image: url('https://images.unsplash.com/photo-1544025162-d76694265947?auto=format&fit=crop&w=1920&q=85');">
+    <div class="hero-overlay"></div>
+    <div class="container subpage-hero-content">
+      <span class="section-tag" style="background:rgba(255,255,255,0.1); border-color:rgba(255,255,255,0.2); color:#dfbe87;">
+        <i class="fa-solid fa-book-open"></i> Full Gastronomic Table
+      </span>
+      <h1 class="subpage-title">Miral Gourmet Dining Menu</h1>
+      <p class="subpage-desc">A symphony of refined flavors catering to every distinguished palate.</p>
+      <div class="breadcrumb-nav">
+        <a href="index.html" style="color:#cbd5e1;">Home</a>
+        <span>/</span>
+        <span>Menu</span>
+      </div>
+    </div>
+  </section>
+
+  <section class="signatures-section" style="padding-top:70px;">
+    <div class="container">
+      <div class="text-center">
+        <span class="section-tag"><i class="fa-solid fa-star"></i> Chef's Top Signatures</span>
+        <h2 class="section-title">Most Celebrated Culinary Creations</h2>
+      </div>
+      <div class="signatures-grid" id="signaturesGrid">
+        <!-- Loaded via JS -->
+      </div>
+    </div>
+  </section>
+
+  <section class="menu-section" style="background:var(--bg-subtle);">
+    <div class="container">
+      <div class="text-center">
+        <span class="section-tag"><i class="fa-solid fa-layer-group"></i> Menu Sections</span>
+        <h2 class="section-title">Browse by Course</h2>
+      </div>
+
+      <div class="menu-tabs-wrapper" id="menuTabsNav">
+        <!-- Loaded via JS -->
+      </div>
+
+      <div class="menu-items-grid" id="menuItemsGrid">
+        <!-- Loaded via JS -->
+      </div>
+
+      <div class="menu-pdf-banner" style="margin-top:60px;">
+        <div class="menu-pdf-content">
+          <h3>Ready to experience these culinary creations?</h3>
+          <p>Book your table now with complimentary valet service and personal host escort.</p>
+        </div>
+        <a href="reservation.html" class="btn btn-primary"><i class="fa-solid fa-chair"></i> Reserve a Table</a>
+      </div>
+    </div>
+  </section>
+
+  
+  <!-- Main Footer -->
+  <footer class="main-footer">
+    <div class="container">
+      <div class="footer-grid">
+        <div class="footer-col footer-about">
+          <div class="brand-logo" style="margin-bottom:18px;">
+            <div class="brand-icon"><i class="fa-solid fa-utensils"></i></div>
+            <div class="brand-text">
+              <h2 style="font-size:22px; color:#fff;">MIRAL GOURMET</h2>
+              <span style="color:var(--primary-light);">FINE DINING • RIYADH</span>
+            </div>
+          </div>
+          <p>
+            Experience contemporary Mediterranean and Andalusian fine dining in an airy, illuminated sanctuary in the heart of Riyadh, where culinary art meets world-class hospitality.
+          </p>
+          <div class="footer-social">
+            <a href="#" class="social-icon-btn" aria-label="Instagram"><i class="fa-brands fa-instagram"></i></a>
+            <a href="#" class="social-icon-btn" aria-label="Snapchat"><i class="fa-brands fa-snapchat"></i></a>
+            <a href="#" class="social-icon-btn" aria-label="Twitter X"><i class="fa-brands fa-x-twitter"></i></a>
+            <a href="https://wa.me/966114808899" class="social-icon-btn" aria-label="WhatsApp"><i class="fa-brands fa-whatsapp"></i></a>
+          </div>
+        </div>
+
+        <div class="footer-col">
+          <h4>Quick Links</h4>
+          <div class="footer-links">
+            <a href="index.html"><i class="fa-solid fa-angle-right"></i> Home Page</a>
+            <a href="about.html"><i class="fa-solid fa-angle-right"></i> Our Story & Philosophy</a>
+            <a href="category.html?cat=all"><i class="fa-solid fa-angle-right"></i> Menu Categories</a>
+            <a href="menu.html"><i class="fa-solid fa-angle-right"></i> Full Menu & Sips</a>
+            <a href="reservation.html"><i class="fa-solid fa-angle-right"></i> Instant Reservation</a>
+            <a href="../admin/index.html" style="color:var(--primary-light); font-weight:800;"><i class="fa-solid fa-lock"></i> Admin CMS</a>
+          </div>
+        </div>
+
+        <div class="footer-col">
+          <h4>Hours & Location</h4>
+          <div class="footer-contact-list">
+            <div class="contact-row">
+              <i class="fa-solid fa-map-pin"></i>
+              <span>Riyadh, As Sulimaniyah, Prince Muhammad Ibn Abd Al Aziz Rd (Tahlia St)</span>
+            </div>
+            <div class="contact-row">
+              <i class="fa-solid fa-clock"></i>
+              <div>
+                <strong>Lunch Service:</strong> 12:30 PM - 05:00 PM<br>
+                <strong>Dinner Service:</strong> 06:30 PM - 01:30 AM<br>
+                <strong>Garden Terrace:</strong> All-day dining
+              </div>
+            </div>
+            <div class="contact-row">
+              <i class="fa-solid fa-phone"></i>
+              <span>Direct Reservations: <a href="tel:+966114808899" style="color:#dfbe87;">+966 11 480 8899</a></span>
+            </div>
+          </div>
+        </div>
+
+        <div class="footer-col">
+          <h4>Gourmet Newsletter</h4>
+          <p style="font-size:13.5px; margin-bottom:14px; color:#cbd5e1;">
+            Join our private circle of epicures for exclusive tasting invitations and seasonal menus.
+          </p>
+          <form class="newsletter-form" onsubmit="event.preventDefault(); showToastEN('Thank you for subscribing to Miral Newsletter!'); this.reset();">
+            <input type="email" class="newsletter-input" placeholder="Your email address" required>
+            <button type="submit" class="btn btn-primary btn-sm"><i class="fa-regular fa-paper-plane"></i></button>
+          </form>
+        </div>
+      </div>
+
+      <div class="footer-bottom">
+        <div>
+          All Rights Reserved © 2026 <strong>Miral Gourmet & Ristorante</strong>
+        </div>
+        <div class="footer-bottom-links">
+          <a href="#">Privacy Policy</a>
+          <span>•</span>
+          <a href="#">Terms & Conditions</a>
+          <span>•</span>
+          <a href="../menu.html" class="text-gold"><i class="fa-solid fa-globe"></i> النسخة العربية</a>
+        </div>
+      </div>
+    </div>
+  </footer>
+
+  <!-- Booking Confirmation Modal -->
+  <div class="modal-backdrop" id="bookingConfirmationModal">
+    <div class="modal-box">
+      <div class="modal-icon"><i class="fa-solid fa-circle-check"></i></div>
+      <h3 class="modal-title">Table Reservation Received!</h3>
+      <p class="modal-desc" id="modalBookingDesc">
+        Thank you for choosing Miral Gourmet. Our concierge team is preparing your table with utmost care.
+      </p>
+      <button class="btn btn-primary" onclick="closeModalEN()" style="width:100%;">
+        <i class="fa-solid fa-check"></i> Excellent, Thank You
+      </button>
+    </div>
+  </div>
+
+  <script src="../js/main.js"></script>
+  <script src="../js/miral-sync-en.js"></script>
+
+
+</body>
+</html>

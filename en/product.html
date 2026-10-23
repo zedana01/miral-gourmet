@@ -1,0 +1,364 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Dish Details | Miral Gourmet Riyadh</title>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+  <link rel="stylesheet" href="../css/style.css">
+  <link rel="stylesheet" href="../css/style-en.css">
+</head>
+<body class="en-page">
+
+  
+  <!-- Top Utility Bar -->
+  <div class="top-bar">
+    <div class="container top-bar-inner">
+      <div class="top-info">
+        <span class="top-info-item"><i class="fa-solid fa-location-dot"></i> <span>Riyadh, Prince Muhammad Ibn Abd Al Aziz Rd (Tahlia)</span></span>
+        <span class="top-info-item"><i class="fa-regular fa-clock"></i> <span>Daily: 12:30 PM - 1:30 AM</span></span>
+        <span class="top-info-item"><i class="fa-solid fa-phone"></i> <a href="tel:+966114808899" class="sync-phone">+966 11 480 8899</a></span>
+      </div>
+      <div class="top-actions">
+        <span class="vip-badge"><i class="fa-solid fa-crown"></i> VIP Service Available</span>
+        <a href="reservation.html" class="instant-book-link"><i class="fa-regular fa-calendar-check text-gold"></i> Instant Booking</a>
+        <a href="../product.html?id=dish-1" class="top-lang-link"><i class="fa-solid fa-globe"></i> العربية</a>
+      </div>
+    </div>
+  </div>
+
+  <!-- Main Navigation Header -->
+  <header class="main-header">
+    <div class="container nav-container">
+      <a href="index.html" class="brand-logo">
+        <div class="brand-icon"><i class="fa-solid fa-utensils"></i></div>
+        <div class="brand-text">
+          <h1>MIRAL GOURMET</h1>
+          <span>FINE DINING • RIYADH</span>
+        </div>
+      </a>
+
+      <nav class="nav-menu" id="navMenu">
+        <a href="index.html" class="nav-link ">Home</a>
+        <a href="about.html" class="nav-link ">About Us</a>
+        <a href="index.html#signatures" class="nav-link">Signatures</a>
+        <a href="menu.html" class="nav-link ">Menu</a>
+        <a href="category.html?cat=all" class="nav-link ">Categories</a>
+        <a href="index.html#terrace" class="nav-link">Terrace & VIP</a>
+        <a href="contact.html" class="nav-link ">Contact</a>
+      </nav>
+
+      <div class="header-actions">
+        <a href="../product.html?id=dish-1" class="lang-switcher-btn" title="التحويل إلى اللغة العربية">
+          <i class="fa-solid fa-globe"></i> العربية
+        </a>
+        <a href="reservation.html" class="btn btn-primary btn-sm"><i class="fa-solid fa-chair"></i> Book Table</a>
+        <button class="mobile-toggle" onclick="toggleMobileMenu()" aria-label="Menu">
+          <i class="fa-solid fa-bars"></i>
+        </button>
+      </div>
+    </div>
+  </header>
+
+
+  <div style="background: #ffffff; border-bottom: 1px solid var(--border-light); padding: 16px 0;">
+    <div class="container">
+      <div class="breadcrumb-nav" style="margin: 0; color: var(--text-secondary); font-size: 14px;">
+        <a href="index.html" style="color: var(--text-secondary);">Home</a>
+        <span>/</span>
+        <a href="menu.html" style="color: var(--text-secondary);">Menu</a>
+        <span>/</span>
+        <a href="category.html?cat=all" id="prodBreadcrumbCat" style="color: var(--text-secondary);">Category</a>
+        <span>/</span>
+        <span id="prodBreadcrumbTitle" style="color: var(--primary); font-weight: 800;">Dish Title</span>
+      </div>
+    </div>
+  </div>
+
+  <section style="padding: 60px 0 80px; background: var(--bg-main);">
+    <div class="container">
+      <div class="product-layout-grid">
+        <div class="product-visual">
+          <div class="product-main-img-box">
+            <img id="prodImage" src="" alt="Dish image" class="product-main-img">
+            <span class="product-badge-float" id="prodBadge">Chef's Selection</span>
+          </div>
+          <div class="product-guarantee-card">
+            <div class="guarantee-item">
+              <i class="fa-solid fa-leaf text-gold"></i>
+              <span>100% Farm-Fresh Organic Ingredients</span>
+            </div>
+            <div class="guarantee-item">
+              <i class="fa-solid fa-fire text-gold"></i>
+              <span>Slow Charred Over Aged Olive Wood</span>
+            </div>
+            <div class="guarantee-item">
+              <i class="fa-solid fa-shield-halved text-gold"></i>
+              <span>Uncompromised Food Safety & Quality Standards</span>
+            </div>
+          </div>
+        </div>
+
+        <div class="product-info-panel">
+          <div class="product-header">
+            <div style="display:flex; align-items:center; gap:10px; margin-bottom:12px; flex-wrap:wrap;">
+              <a href="#" id="prodCatLink" class="dish-tag" style="font-size:13px; padding:4px 14px;">Course</a>
+              <span class="dish-tag" id="prodSignatureTag" style="display:none; background:#10b981; color:#fff;">
+                <i class="fa-solid fa-crown"></i> Signature Creation
+              </span>
+            </div>
+            <h1 class="product-title" id="prodTitle">Dish Title</h1>
+            <div class="product-price-row">
+              <span class="product-price" id="prodPrice">0 SAR</span>
+              <span class="product-tax-note">(VAT Inclusive)</span>
+            </div>
+          </div>
+
+          <div class="product-desc-box">
+            <h3 style="font-size:16px; font-weight:800; color:var(--text-main); margin-bottom:8px;">About the Creation & Ingredients</h3>
+            <p id="prodDesc" style="font-size:15.5px; line-height:1.8; color:var(--text-secondary);"></p>
+          </div>
+
+          <div class="product-specs-grid">
+            <div class="spec-card">
+              <i class="fa-solid fa-fire text-gold" style="font-size:22px;"></i>
+              <div>
+                <strong>Calories</strong>
+                <span id="prodCalories">0 kcal</span>
+              </div>
+            </div>
+            <div class="spec-card">
+              <i class="fa-solid fa-hat-chef text-gold" style="font-size:22px;"></i>
+              <div>
+                <strong>Preparation</strong>
+                <span>Artisan Fresh</span>
+              </div>
+            </div>
+            <div class="spec-card">
+              <i class="fa-solid fa-clock text-gold" style="font-size:22px;"></i>
+              <div>
+                <strong>Serving Time</strong>
+                <span>20-25 mins</span>
+              </div>
+            </div>
+          </div>
+
+          <div class="product-booking-box">
+            <h3 style="font-size:18px; font-weight:900; margin-bottom:6px; color:var(--text-main);">
+              <i class="fa-solid fa-chair text-gold"></i> Reserve Table to Taste this Dish
+            </h3>
+            <p style="font-size:13.5px; color:var(--text-secondary); margin-bottom:16px;">
+              Select your date and time; our chefs will prepare this creation fresh for your table upon arrival.
+            </p>
+            <form onsubmit="handleProductBookingEN(event)" style="display:flex; flex-direction:column; gap:12px;">
+              <div style="display:grid; grid-template-columns:1fr 1fr; gap:12px;">
+                <input type="text" id="prodBookName" class="form-control" placeholder="Full Name *" required>
+                <input type="tel" id="prodBookPhone" class="form-control" placeholder="Mobile / WhatsApp *" required>
+              </div>
+              <div style="display:grid; grid-template-columns:1fr 1fr; gap:12px;">
+                <input type="date" id="prodBookDate" class="form-control" value="2026-10-25" required>
+                <select id="prodBookTime" class="form-control" required>
+                  <option>01:00 PM (Lunch)</option>
+                  <option>03:30 PM (Late Lunch)</option>
+                  <option selected>08:00 PM (Dinner)</option>
+                  <option>10:00 PM</option>
+                  <option>11:30 PM (Late Dinner)</option>
+                </select>
+              </div>
+              <button type="submit" class="btn btn-primary" style="height:50px; font-size:16px;">
+                <i class="fa-solid fa-calendar-check"></i> Reserve Table with this Dish
+              </button>
+            </form>
+          </div>
+        </div>
+      </div>
+
+      <div style="margin-top: 80px;">
+        <div class="text-center" style="margin-bottom: 35px;">
+          <span class="section-tag"><i class="fa-solid fa-star"></i> Chef's Recommendations</span>
+          <h2 class="section-title">Other Delicacies You Might Enjoy</h2>
+        </div>
+        <div class="signatures-grid" id="relatedDishesGrid">
+          <!-- Rendered via JS -->
+        </div>
+      </div>
+    </div>
+  </section>
+
+  
+  <!-- Main Footer -->
+  <footer class="main-footer">
+    <div class="container">
+      <div class="footer-grid">
+        <div class="footer-col footer-about">
+          <div class="brand-logo" style="margin-bottom:18px;">
+            <div class="brand-icon"><i class="fa-solid fa-utensils"></i></div>
+            <div class="brand-text">
+              <h2 style="font-size:22px; color:#fff;">MIRAL GOURMET</h2>
+              <span style="color:var(--primary-light);">FINE DINING • RIYADH</span>
+            </div>
+          </div>
+          <p>
+            Experience contemporary Mediterranean and Andalusian fine dining in an airy, illuminated sanctuary in the heart of Riyadh, where culinary art meets world-class hospitality.
+          </p>
+          <div class="footer-social">
+            <a href="#" class="social-icon-btn" aria-label="Instagram"><i class="fa-brands fa-instagram"></i></a>
+            <a href="#" class="social-icon-btn" aria-label="Snapchat"><i class="fa-brands fa-snapchat"></i></a>
+            <a href="#" class="social-icon-btn" aria-label="Twitter X"><i class="fa-brands fa-x-twitter"></i></a>
+            <a href="https://wa.me/966114808899" class="social-icon-btn" aria-label="WhatsApp"><i class="fa-brands fa-whatsapp"></i></a>
+          </div>
+        </div>
+
+        <div class="footer-col">
+          <h4>Quick Links</h4>
+          <div class="footer-links">
+            <a href="index.html"><i class="fa-solid fa-angle-right"></i> Home Page</a>
+            <a href="about.html"><i class="fa-solid fa-angle-right"></i> Our Story & Philosophy</a>
+            <a href="category.html?cat=all"><i class="fa-solid fa-angle-right"></i> Menu Categories</a>
+            <a href="menu.html"><i class="fa-solid fa-angle-right"></i> Full Menu & Sips</a>
+            <a href="reservation.html"><i class="fa-solid fa-angle-right"></i> Instant Reservation</a>
+            <a href="../admin/index.html" style="color:var(--primary-light); font-weight:800;"><i class="fa-solid fa-lock"></i> Admin CMS</a>
+          </div>
+        </div>
+
+        <div class="footer-col">
+          <h4>Hours & Location</h4>
+          <div class="footer-contact-list">
+            <div class="contact-row">
+              <i class="fa-solid fa-map-pin"></i>
+              <span>Riyadh, As Sulimaniyah, Prince Muhammad Ibn Abd Al Aziz Rd (Tahlia St)</span>
+            </div>
+            <div class="contact-row">
+              <i class="fa-solid fa-clock"></i>
+              <div>
+                <strong>Lunch Service:</strong> 12:30 PM - 05:00 PM<br>
+                <strong>Dinner Service:</strong> 06:30 PM - 01:30 AM<br>
+                <strong>Garden Terrace:</strong> All-day dining
+              </div>
+            </div>
+            <div class="contact-row">
+              <i class="fa-solid fa-phone"></i>
+              <span>Direct Reservations: <a href="tel:+966114808899" style="color:#dfbe87;">+966 11 480 8899</a></span>
+            </div>
+          </div>
+        </div>
+
+        <div class="footer-col">
+          <h4>Gourmet Newsletter</h4>
+          <p style="font-size:13.5px; margin-bottom:14px; color:#cbd5e1;">
+            Join our private circle of epicures for exclusive tasting invitations and seasonal menus.
+          </p>
+          <form class="newsletter-form" onsubmit="event.preventDefault(); showToastEN('Thank you for subscribing to Miral Newsletter!'); this.reset();">
+            <input type="email" class="newsletter-input" placeholder="Your email address" required>
+            <button type="submit" class="btn btn-primary btn-sm"><i class="fa-regular fa-paper-plane"></i></button>
+          </form>
+        </div>
+      </div>
+
+      <div class="footer-bottom">
+        <div>
+          All Rights Reserved © 2026 <strong>Miral Gourmet & Ristorante</strong>
+        </div>
+        <div class="footer-bottom-links">
+          <a href="#">Privacy Policy</a>
+          <span>•</span>
+          <a href="#">Terms & Conditions</a>
+          <span>•</span>
+          <a href="../product.html?id=dish-1" class="text-gold"><i class="fa-solid fa-globe"></i> النسخة العربية</a>
+        </div>
+      </div>
+    </div>
+  </footer>
+
+  <!-- Booking Confirmation Modal -->
+  <div class="modal-backdrop" id="bookingConfirmationModal">
+    <div class="modal-box">
+      <div class="modal-icon"><i class="fa-solid fa-circle-check"></i></div>
+      <h3 class="modal-title">Table Reservation Received!</h3>
+      <p class="modal-desc" id="modalBookingDesc">
+        Thank you for choosing Miral Gourmet. Our concierge team is preparing your table with utmost care.
+      </p>
+      <button class="btn btn-primary" onclick="closeModalEN()" style="width:100%;">
+        <i class="fa-solid fa-check"></i> Excellent, Thank You
+      </button>
+    </div>
+  </div>
+
+  <script src="../js/main.js"></script>
+  <script src="../js/miral-sync-en.js"></script>
+
+
+  <script>
+    var currentDish = null;
+
+    document.addEventListener('DOMContentLoaded', function() {
+      var urlParams = new URLSearchParams(window.location.search);
+      var dishId = urlParams.get('id') || 'dish-1';
+      var data = getMiralDataEN();
+      
+      currentDish = (data.dishes || []).find(function(d) { return d.id === dishId; }) || (data.dishes && data.dishes[0]);
+      if (!currentDish) return;
+
+      document.title = currentDish.title + ' | Miral Gourmet';
+      document.getElementById('prodBreadcrumbTitle').innerText = currentDish.title;
+      document.getElementById('prodTitle').innerText = currentDish.title;
+      document.getElementById('prodPrice').innerText = currentDish.price + ' SAR';
+      document.getElementById('prodDesc').innerText = currentDish.desc;
+      document.getElementById('prodCalories').innerText = (currentDish.calories || 0) + ' kcal';
+      document.getElementById('prodImage').src = currentDish.image;
+      document.getElementById('prodBadge').innerText = currentDish.badge || "Chef's Choice";
+
+      var catObj = (data.categories || []).find(function(c) { return c.slug === currentDish.category; });
+      var catName = catObj ? catObj.name : currentDish.category;
+      document.getElementById('prodBreadcrumbCat').innerText = catName;
+      document.getElementById('prodBreadcrumbCat').href = 'category.html?cat=' + currentDish.category;
+      document.getElementById('prodCatLink').innerText = catName;
+      document.getElementById('prodCatLink').href = 'category.html?cat=' + currentDish.category;
+
+      if (currentDish.isSignature) {
+        document.getElementById('prodSignatureTag').style.display = 'inline-flex';
+      }
+
+      var related = (data.dishes || []).filter(function(d) { 
+        return d.id !== currentDish.id && (d.category === currentDish.category || d.isSignature); 
+      }).slice(0, 3);
+
+      var relGrid = document.getElementById('relatedDishesGrid');
+      if (relGrid) {
+        var html = '';
+        related.forEach(function(d) {
+          html += `
+            <div class="dish-card">
+              <div class="dish-img-wrapper">
+                <a href="product.html?id=` + d.id + `">
+                  <img src="` + d.image + `" alt="` + d.title + `" class="dish-img" loading="lazy">
+                </a>
+                <span class="dish-badge">` + (d.badge || 'Special') + `</span>
+                <span class="dish-price-tag">` + d.price + ` SAR</span>
+              </div>
+              <div class="dish-info">
+                <h3 class="dish-title">
+                  <a href="product.html?id=` + d.id + `" style="color:inherit;">` + d.title + `</a>
+                </h3>
+                <p class="dish-desc">` + d.desc + `</p>
+                <div class="dish-footer" style="padding-top:14px; border-top:1px solid var(--border-light); display:flex; justify-content:space-between; align-items:center;">
+                  <span class="dish-cal"><i class="fa-solid fa-fire"></i> ` + (d.calories || 0) + ` kcal</span>
+                  <a href="product.html?id=` + d.id + `" class="btn btn-outline btn-sm">View Dish</a>
+                </div>
+              </div>
+            </div>
+          `;
+        });
+        relGrid.innerHTML = html;
+      }
+    });
+
+    function handleProductBookingEN(event) {
+      event.preventDefault();
+      var name = document.getElementById('prodBookName').value;
+      showToastEN('Reservation request received for (' + (currentDish ? currentDish.title : '') + ')! Our concierge will contact you shortly.');
+      event.target.reset();
+    }
+  </script>
+</body>
+</html>

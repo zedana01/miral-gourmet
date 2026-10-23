@@ -1,0 +1,138 @@
+/* ==========================================================================
+   MIRAL GOURMET - ENGLISH LTR STYLES
+   ========================================================================== */
+
+@import url('https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,500;0,600;0,700;0,800;0,900;1,600&family=Plus+Jakarta+Sans:wght@300;400;500;600;700;800&display=swap');
+
+html[dir="ltr"], body.en-page {
+  direction: ltr !important;
+  font-family: 'Plus Jakarta Sans', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif !important;
+  text-align: left !important;
+}
+
+/* Luxury Serif Typography for Titles */
+h1, h2, h3, .section-title, .hero-title, .product-title, .brand-text h1 {
+  font-family: 'Playfair Display', Georgia, serif;
+  letter-spacing: -0.3px;
+}
+
+/* Navbar & Brand */
+.brand-text h1 {
+  font-size: 20px;
+  line-height: 1.1;
+}
+
+.brand-text span {
+  letter-spacing: 2px;
+  font-family: 'Plus Jakarta Sans', sans-serif;
+}
+
+.nav-link {
+  font-size: 14.5px;
+  font-weight: 600;
+}
+
+.nav-link::after {
+  right: auto;
+  left: 0;
+}
+
+/* Indicators */
+.indicator-card {
+  text-align: left;
+}
+
+/* Story Section */
+.story-quote-card {
+  border-right: none;
+  border-left: 4px solid var(--primary);
+  border-radius: var(--radius-md) 0 0 var(--radius-md);
+}
+
+.story-img-badge {
+  left: auto;
+  right: -20px;
+}
+
+/* Dishes */
+.dish-badge {
+  right: auto;
+  left: 15px;
+}
+
+.dish-price-tag {
+  left: auto;
+  right: 15px;
+}
+
+.menu-list-header {
+  flex-direction: row;
+}
+
+/* Product Detail */
+.product-badge-float {
+  right: auto;
+  left: 20px;
+}
+
+/* Footer */
+.footer-col h4::after {
+  right: auto;
+  left: 0;
+}
+
+.footer-links a i {
+  transform: rotate(180deg);
+}
+
+.footer-links a:hover {
+  transform: translateX(4px);
+}
+
+/* Lang Switcher Pill */
+.lang-switcher-btn {
+  display: inline-flex;
+  align-items: center;
+  gap: 7px;
+  padding: 6px 14px;
+  border-radius: var(--radius-pill);
+  background: rgba(197, 157, 63, 0.12);
+  border: 1px solid rgba(197, 157, 63, 0.35);
+  color: var(--primary);
+  font-size: 13px;
+  font-weight: 700;
+  text-decoration: none;
+  transition: var(--transition);
+}
+
+.lang-switcher-btn:hover {
+  background: var(--primary);
+  color: #ffffff;
+  transform: translateY(-2px);
+  box-shadow: 0 4px 12px rgba(184, 134, 74, 0.25);
+}
+
+.top-lang-link {
+  color: #dfbe87;
+  font-weight: 700;
+  font-size: 12.5px;
+  display: inline-flex;
+  align-items: center;
+  gap: 5px;
+}
+
+.top-lang-link:hover {
+  color: #ffffff;
+}
+
+@media (max-width: 768px) {
+  .nav-menu {
+    right: auto;
+    left: -100%;
+    align-items: flex-start;
+  }
+  .nav-menu.open {
+    left: 0;
+    right: auto;
+  }
+}
